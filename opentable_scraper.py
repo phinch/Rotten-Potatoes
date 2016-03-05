@@ -90,9 +90,9 @@ for i in range(len(names) - 1):
 	name = names[i]
 
 	# Write restaurant name to names_file
-	names_file.write(name + '\n')
+	names_file.write('data/'+ name + '\n')
 
-	with open(name + '.csv', "wb") as r:
+	with open('data/' + name + '.csv', "wb") as r:
 		rwriter = csv.writer(r, delimiter = '|')
 
 		rwriter.writerow(["Review Title", "Review Date", "Review Score", "Review Text"])
