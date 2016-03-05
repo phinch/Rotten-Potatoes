@@ -80,7 +80,7 @@ for i in range(len(restaurant_urls) - 1):
 	name_to_reviews[name] = (restaurant_titles, restaurant_review_text, restaurant_review_date, restaurant_review_score)
 
 # Open Files
-names_file = open("names.txt", "wb")
+names_file = open("data/opentable_names.txt", "wb")
 
 print "Len names: " + str(len(names))
 
@@ -90,9 +90,9 @@ for i in range(len(names) - 1):
 	name = names[i]
 
 	# Write restaurant name to names_file
-	names_file.write('data/'+ name + '\n')
+	names_file.write('data/opentable_csvs/'+ name + '\n')
 
-	with open('data/' + name + '.csv', "wb") as r:
+	with open('data/opentable_csvs/' + name + '.csv', "wb") as r:
 		rwriter = csv.writer(r, delimiter = '|')
 
 		rwriter.writerow(["Review Title", "Review Date", "Review Score", "Review Text"])
