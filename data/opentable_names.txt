@@ -1,46 +1,46 @@
-data/opentable_csvs/Andino's Restaurant
-data/opentable_csvs/Bluefin Grille
-data/opentable_csvs/Bocado Tapas Wine Bar - Providence
-data/opentable_csvs/Bravo Brasserie - Providence
-data/opentable_csvs/Cafe Nuovo
-data/opentable_csvs/Camille's Restaurant
-data/opentable_csvs/The Capital Grille - Providence
-data/opentable_csvs/Capriccio
-data/opentable_csvs/Cassarino's
-data/opentable_csvs/CAV Restaurant
-data/opentable_csvs/Centro Restaurant & Lounge
-data/opentable_csvs/Circe Restaurant & Bar
-data/opentable_csvs/Cook & Brown Public House
-data/opentable_csvs/Costantino's Venda Bar & Ristorante
-data/opentable_csvs/The Dorrance
-data/opentable_csvs/Federal Taphouse and Kitchen
-data/opentable_csvs/The Fire
-data/opentable_csvs/Fleming's Steakhouse - Providence
-data/opentable_csvs/G Pub
-data/opentable_csvs/Garde de la Mer
-data/opentable_csvs/Gracie's
-data/opentable_csvs/Hemenway's
-data/opentable_csvs/India Restaurant
-data/opentable_csvs/Jacky's Restaurant & Banquets (North Providence)
-data/opentable_csvs/Jacky's Waterplace Restaurant (Downtown, Providence)
-data/opentable_csvs/Local 121
-data/opentable_csvs/McCormick & Schmick's Seafood - Providence
-data/opentable_csvs/The Melting Pot - Providence
-data/opentable_csvs/Mill's Tavern
-data/opentable_csvs/Nami
-data/opentable_csvs/Pane e Vino Providence
-data/opentable_csvs/Parkside Rotisserie & Bar
-data/opentable_csvs/Pot au Feu
-data/opentable_csvs/Primecut
-data/opentable_csvs/Providence Coal Fired Pizza
-data/opentable_csvs/Providence Oyster Bar
-data/opentable_csvs/Public Kitchen and Bar
-data/opentable_csvs/Red Fin Crudo
-data/opentable_csvs/Red Stripe
-data/opentable_csvs/Rooftop at Providence G
-data/opentable_csvs/Rosalina
-data/opentable_csvs/Shula's 347 Grill - Providence
-data/opentable_csvs/Siena - Providence
-data/opentable_csvs/Spirito's Restaurant
-data/opentable_csvs/Ten Prime Steak & Sushi - Providence
-data/opentable_csvs/Waterman Grille
+Andino's Restaurant
+Bluefin Grille
+Bocado Tapas Wine Bar - Providence
+Bravo Brasserie - Providence
+Cafe Nuovo
+Camille's Restaurant
+The Capital Grille - Providence
+Capriccio
+Cassarino's
+CAV Restaurant
+Centro Restaurant & Lounge
+Circe Restaurant & Bar
+Cook & Brown Public House
+Costantino's Venda Bar & Ristorante
+The Dorrance
+Federal Taphouse and Kitchen
+The Fire
+Fleming's Steakhouse - Providence
+G Pub
+Garde de la Mer
+Gracie's
+Hemenway's
+India Restaurant
+Jacky's Restaurant & Banquets (North Providence)
+Jacky's Waterplace Restaurant (Downtown, Providence)
+Local 121
+McCormick & Schmick's Seafood - Providence
+The Melting Pot - Providence
+Mill's Tavern
+Nami
+Pane e Vino Providence
+Parkside Rotisserie & Bar
+Pot au Feu
+Primecut
+Providence Coal Fired Pizza
+Providence Oyster Bar
+Public Kitchen and Bar
+Red Fin Crudo
+Red Stripe
+Rooftop at Providence G
+Rosalina
+Shula's 347 Grill - Providence
+Siena - Providence
+Spirito's Restaurant
+Ten Prime Steak & Sushi - Providence
+Waterman Grille

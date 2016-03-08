@@ -90,7 +90,7 @@ for i in range(len(names) - 1):
 	name = names[i]
 
 	# Write restaurant name to names_file
-	names_file.write('data/opentable_csvs/'+ name + '\n')
+	names_file.write(name + '\n')
 
 	with open('data/opentable_csvs/' + name + '.csv', "wb") as r:
 		rwriter = csv.writer(r, delimiter = '|')
