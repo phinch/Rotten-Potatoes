@@ -44,12 +44,11 @@ public class Loader {
 	/**
 	 * 
 	 * @param path
-	 * @param table
 	 * @throws IOException
 	 * @throws SQLException
 	 */
 	public void fillTable(String path, String table) throws IOException, 
-			SQLException {
+		SQLException {
 	    BufferedReader br = new BufferedReader(new FileReader(path));
 
 	    String[] nextLine;

@@ -44,7 +44,6 @@ public class Loader {
 	/**
 	 * 
 	 * @param path
-	 * @param table
 	 * @throws IOException
 	 * @throws SQLException
 	 */

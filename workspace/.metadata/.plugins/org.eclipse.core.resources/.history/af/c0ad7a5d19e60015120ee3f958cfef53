@@ -34,7 +34,7 @@ public class Loader {
 	 * @param schema
 	 * @throws SQLException
 	 */
-	public void buildTable(String schema) throws SQLException {
+	private void buildTable(String schema) throws SQLException {
 	    PreparedStatement ps = conn.prepareStatement(schema);
 	    ps.executeUpdate();
 
@@ -44,12 +44,10 @@ public class Loader {
 	/**
 	 * 
 	 * @param path
-	 * @param table
 	 * @throws IOException
 	 * @throws SQLException
 	 */
-	public void fillTable(String path, String table) throws IOException, 
-			SQLException {
+	public void fillTable(String path) throws IOException, SQLException {
 	    BufferedReader br = new BufferedReader(new FileReader(path));
 
 	    String[] nextLine;
