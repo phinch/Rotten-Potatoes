@@ -1,0 +1,5 @@
+package dbloader;
+
+public class Loader {
+	private Connection conn;
+}

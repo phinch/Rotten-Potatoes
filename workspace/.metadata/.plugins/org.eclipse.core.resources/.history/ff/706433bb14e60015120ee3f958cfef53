@@ -1,0 +1,7 @@
+package dbloader;
+
+import java.sql.Connection;
+
+public class Loader {
+	private Connection conn;
+}
