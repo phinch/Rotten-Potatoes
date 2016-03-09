@@ -41,12 +41,6 @@ public class Loader {
 	    ps.close();
 	}
 	
-	/**
-	 * 
-	 * @param path
-	 * @throws IOException
-	 * @throws SQLException
-	 */
 	public void fillTable(String path) throws IOException, SQLException {
 	    BufferedReader br = new BufferedReader(new FileReader(path));
 

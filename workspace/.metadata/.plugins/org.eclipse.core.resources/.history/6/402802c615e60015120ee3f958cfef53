@@ -10,17 +10,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Loader {
-	/**
-	 * Connection to the database
-	 */
 	private Connection conn;
 	
-	/**
-	 * Establishes a connection to the database
-	 * @param dbpath the path to the database
-	 * @throws ClassNotFoundException
-	 * @throws SQLException
-	 */
 	public Loader(String dbpath) throws ClassNotFoundException, SQLException {
 		Class.forName("org.sqlite.JDBC");
 	    String urlToDB = "jdbc:sqlite:" + dbpath;
@@ -29,11 +20,6 @@ public class Loader {
 	    cstat.executeUpdate("PRAGMA foreign_keys = ON;");
 	}
 	
-	/**
-	 * 
-	 * @param schema
-	 * @throws SQLException
-	 */
 	private void buildTable(String schema) throws SQLException {
 	    PreparedStatement ps = conn.prepareStatement(schema);
 	    ps.executeUpdate();
@@ -41,34 +27,33 @@ public class Loader {
 	    ps.close();
 	}
 	
-	/**
-	 * 
-	 * @param path
-	 * @throws IOException
-	 * @throws SQLException
-	 */
 	public void fillTable(String path) throws IOException, SQLException {
 	    BufferedReader br = new BufferedReader(new FileReader(path));
 
 	    String[] nextLine;
-	    
-	    String insert = "";
-	    PreparedStatement ps = conn.prepareStatement(insert);
+	    List<String> header;
+	    header = Arrays.asList(cReader.readNext());
 
-	    while ((nextLine = br.readLine().split("|")) != null) {
+	    int name_idx = header.indexOf("name");
+	    int grad_idx = header.indexOf("grad_year");
+	    int gpa_idx = header.indexOf("gpa");
+
+	    String query = "INSERT INTO student VALUES (?,?,?)";
+	    PreparedStatement ps = conn.prepareStatement(query);
+
+	    while ((nextLine = cReader.readNext()) != null) {
+	      ps.setString(1, nextLine[name_idx]);
+	      ps.setInt(2, Integer.parseInt(nextLine[grad_idx]));
+	      ps.setDouble(3, Double.parseDouble(nextLine[gpa_idx]));
 	      ps.addBatch();
 	    }
 
 	    ps.executeBatch();
 
-	    br.close();
+	    cReader.close();
 	    ps.close();
-	}
+	  }
 	
-	/**
-	 * Closes the connection to the database
-	 * @throws SQLException
-	 */
 	public void close() throws SQLException {
 	    conn.close();
 	}
