@@ -5,7 +5,6 @@ import glob
 import os
 
 def main():
-
 	csv_filenames = []
 	score_reviews = []
 	
