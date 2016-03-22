@@ -30,7 +30,7 @@ def main():
 
 if __name__ == '__main__':
 	if len(sys.argv) != 2:
-		print 'Usage: python review_classifier.py data_path'
+		print 'Usage: python feature_generator.py data_path'
 		sys.exit()
 	data_path = sys.argv[1]
 	main()
