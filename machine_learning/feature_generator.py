@@ -24,7 +24,7 @@ def main():
 	
 	with open('features.csv', 'wb') as output:
 		writer = csv.writer(output, delimiter='|')
-		writer.writerow(['positivity', 'text'])
+		writer.writerow(['positivity_label', 'text'])
 		for tup in score_reviews:
 			writer.writerow([tup[0], tup[1]])
 
