@@ -1,0 +1,218 @@
+roba!dolce|41.8281263|-71.4006111|2.0|2|0
+Asian Bistro|41.822204|-71.410016|2.5|4|1
+XO Steakhouse|41.82843|-71.4094779|4.5|3|0
+Sura|41.8231881|-71.4122337|3.5|14|1
+Fellini Pizzeria|41.8193377|-71.4000648|3.5|38|1
+The Capital Grille|41.8259791|-71.414308|4.5|12|1
+Kartabar|41.829596|-71.401008|3.5|22|1
+Dok's Deli|41.8221766|-71.3921962|4.0|8|1
+East Side Pockets|41.8295851|-71.4009512|4.5|77|1
+Alibi Cafe|41.817929|-71.410781|3.0|1|1
+Adesso California Cafe|41.8300901|-71.3998136|4.0|0|0
+Meeting Street Café|41.829438|-71.401268|4.0|19|1
+Silver Star Bakery|41.822309|-71.3923166|4.0|3|1
+Mama Teresa of Providence|41.8233243|-71.4120693|4.5|1|0
+Pot Au Feu|41.8242389|-71.409287|3.5|13|1
+Bagel Gourmet Cafe|41.819064|-71.408276|4.0|3|1
+Pakarang Exquisite Thai Cuisine|41.821931|-71.404849|3.5|9|1
+Starbucks Coffee|41.825739|-71.409943|4.0|1|1
+United BBQ|41.8221766|-71.3921962|3.5|26|0
+Taza Caffe|41.8228204|-71.4127208|5.0|0|1
+Souper Bowls|41.82411|-71.409959|4.0|1|1
+George's Deli|41.822918|-71.391961|3.0|0|1
+Kabob N Curry|41.8289408|-71.4006385|4.0|1|1
+Angkor Restaurant|41.819096|-71.399341|4.0|21|1
+Cilantro Mexican Grill|41.8229886|-71.4112652|2.5|11|1
+Cafe Zog|41.819391|-71.398453|3.0|13|1
+Cafe Francaise|41.829243|-71.413282|4.0|1|1
+Rue-Bis|41.8168113|-71.4092755|4.0|5|1
+Cafe Noir|41.828387|-71.409408|3.5|6|0
+Toledo Toledo Pizza In a Cone|41.8287819|-71.400571|2.0|3|1
+New Rivers|41.8274261|-71.4094955|4.0|16|1
+Blake's Tavern|41.82288|-71.4147767|3.5|10|1
+Loui's Restaurant|41.824692|-71.399079|3.5|25|1
+Pinkberry Frozen Yogurt|41.8239891|-71.4128343|4.0|1|1
+Coco Pazzo|41.8283195495605|-71.4014892578125|3.0|6|1
+Nordstrom EBar|41.8239891|-71.4128343|3.5|1|1
+Ugly American|41.822918|-71.391961|3.5|7|1
+Reflections Cafe|41.8201312|-71.3936168|4.0|3|0
+Rue De L'espoir|41.8220424|-71.3964288|3.0|16|1
+Benders Caffe|41.822984|-71.411408|2.5|0|0
+Dark Lady|41.8210707|-71.4136313|3.5|2|1
+Pie in the Sky|41.8278715|-71.4005486|4.0|6|1
+Juniper Frozen Yogurt|41.8279392|-71.4005565|4.0|9|1
+Pvd Pudding Pops|41.8239891|-71.4128343|4.0|5|1
+Al Forno Restaurant|41.8173184|-71.4005886|4.0|45|1
+Starbucks Coffee|41.827311|-71.4009146|3.0|0|1
+Providence Cookie Co|41.8233251|-71.4098445|4.5|1|1
+SideBar & Grill|41.822215|-71.409998|3.5|4|1
+Plan Bean|41.828443|-71.409756|4.5|0|0
+The Cheesecake Factory|41.828997|-71.4157029|3.5|21|1
+The Point Tavern|41.819674|-71.397127|3.5|1|1
+Ben & Jerry's Ice Cream & Frozen Yogurt|41.8291847|-71.4003614|3.0|2|1
+Napa Valley Grille|41.828158|-71.415696|3.5|3|0
+Small Point Café|41.8229602|-71.4125119|4.0|16|1
+Sawaddee Thai Restaurant|41.821784|-71.396246|3.5|17|1
+Mike's Calzone|41.8298347|-71.4009616|4.0|4|1
+Corporate Cafe Inc the|41.825074|-71.409257|3.5|1|1
+Geoff's On Thayer|41.8282084|-71.400906|3.0|2|0
+Froyoworld|41.827592|-71.400326|4.0|18|1
+Better Burger Company|41.827514|-71.400317|2.5|16|1
+McCurdy's Junction House|41.820424|-71.3917949|4.0|6|0
+Fleming's Prime Steakhouse & Wine Bar|41.824969|-71.4159063|4.0|17|1
+Angkor Restaurant Express|41.822984|-71.411408|3.0|3|0
+Joe's American Bar & Grill|41.827537|-71.41568|3.0|10|1
+Geoff's Superlative Sandwiches|41.828742|-71.408115|4.0|21|1
+Poco Loco Taco Truck|41.8218531|-71.4121125|4.0|7|1
+Fish Co Bar & Grill|41.8180055|-71.4022424|2.5|4|0
+The Duck and Bunny|41.819668|-71.396915|4.0|50|1
+Chipotle|41.8281263|-71.4006111|3.5|3|1
+Local 121|41.823014|-71.414995|4.0|39|1
+Parkside Rotisserie & Bar|41.8248301|-71.4071149|3.5|13|1
+McCormick & Schmick's|41.8247144|-71.4135595|3.0|12|1
+Chinese Iron Wok of Ri|41.824975|-71.399207|3.5|3|1
+Phonatic|41.827912|-71.401182|3.0|7|0
+Ten Prime Steak & Sushi|41.8230326|-71.4096136|3.5|19|1
+Dunkin Donuts|41.8294876|-71.4007247|4.0|1|0
+Quickly|41.8240905|-71.412245|3.0|4|1
+Haven Brothers|41.8241644|-71.4123699|3.0|8|1
+Cheeseboy: Grilled Cheese To Go|41.8278207|-71.4158882|4.0|3|1
+The Dorrance|41.823585|-71.411395|4.5|17|1
+Capriccio|41.823791|-71.4086192|4.0|14|1
+Wings To Go|41.820402|-71.391665|4.0|3|0
+Cafe Choklad|41.827703|-71.408864|4.0|8|1
+Brick Alley Pizza|41.818034|-71.401386|4.0|0|1
+Spats Restaurant & Pub|41.828227|-71.400399|3.0|16|1
+Rick's Roadhouse|41.8168243|-71.4074366|3.5|16|1
+Andreas Restaurant|41.82905|-71.400914|3.5|22|1
+City Gyro|41.8244647320346|-71.4125061035156|5.0|2|1
+Ama's|41.8242669|-71.4103342|4.0|7|0
+English Cellar Alehouse|41.827912|-71.401182|3.0|19|1
+Flan Y Ajo|41.8230933|-71.4126452|4.5|15|1
+Teriyaki and Korean House|41.8231976|-71.412478|4.5|8|1
+Championship Melt|41.820514|-71.413211|4.5|1|1
+Neath's New American Bistro|41.8217121|-71.4051363|4.5|3|0
+Victoria's Pizzeria|41.823386|-71.39237|2.0|0|1
+Chowder House Bar and Grill|41.8174492|-71.4017185|1.5|2|1
+Petit Mange|41.822984|-71.411408|3.5|1|0
+Mama Kim's Korean BBQ|41.8272819|-71.400536|4.5|21|1
+Sushi Express|41.8297092|-71.4007572|2.5|5|1
+Solomon's Market|41.8203242|-71.4016859|3.5|2|0
+Gourmet Heaven|41.8221434|-71.411888|3.5|7|1
+Au Bon Pain|41.8245108|-71.4105854|2.5|1|1
+Fire & Ice|41.8264976|-71.4156805|3.0|27|1
+The Blount Clam Shack and Soup Bar|41.8170098|-71.4075745|4.0|10|1
+Viva Mexico Cantina & Grill|41.8229336|-71.4149714|3.0|6|1
+Tazza|41.8228204|-71.4127208|3.5|35|1
+Abyssinia|41.819494|-71.396469|4.0|29|1
+Dragon 2000|41.8227204|-71.414377|4.0|1|1
+Brickway On Wickenden|41.819657|-71.397445|3.5|27|1
+Café La France|41.829243|-71.413282|3.0|5|1
+Hercules Mulligan's Irish Pub|41.8294119|-71.4009077|3.0|3|1
+Providence Coal Fired Pizza|41.821415|-71.415274|4.5|12|1
+O-Cha|41.819369|-71.39881|3.0|0|1
+The Apartment|41.816901|-71.40778|2.5|5|1
+Jacky's Waterplace|41.8274018|-71.4127984|4.0|16|1
+Spice Thai Bistro|41.8276309|-71.399077|2.5|9|1
+Starbucks Coffee|41.8247144|-71.4135595|4.0|3|1
+Murphy's Deli & Bar|41.823773|-71.4158374|3.5|7|1
+The Red Fez|41.8228851|-71.4090594|4.0|46|1
+Centro Restaurant and Lounge|41.824969|-71.4159063|2.0|3|1
+Sakura Restaurant|41.8194126|-71.3986442|3.5|29|1
+Olga's Cup and Saucer|41.8165064|-71.4073932|3.5|24|1
+Eddie & Sons Diner|41.8233701|-71.4111087|3.5|4|1
+Raphael Bar Risto|41.8259791|-71.414308|3.0|0|0
+Gourmet India|41.827388|-71.416624|3.5|8|1
+Blue State Coffee|41.8301162|-71.40115|4.0|17|1
+Pizza Queen|41.821724|-71.412701|2.5|7|1
+Soban|41.829235|-71.400943|3.5|3|1
+Bagel Gourmet Ole|41.8278157|-71.4006351|4.0|4|1
+Tommy's Place|41.823942|-71.410915|3.0|3|1
+3 Steeple Street Bistro & Bar|41.827427|-71.409843|3.5|4|0
+Café Yuni|41.819096|-71.399341|4.0|2|0
+The Wild Colonial Tavern|41.822528|-71.405483|3.5|11|1
+Eat 82|41.823429|-71.410221|3.0|4|1
+Asian Paradise Restaurant|41.827912|-71.401182|3.5|1|1
+Via Via IV|41.8289555|-71.4014707|3.5|1|0
+Haruki Express|41.8275163|-71.39981|3.0|6|1
+Baja's Burritos|41.829378|-71.400636|3.5|12|1
+Gordito Burrito|41.828916|-71.400915|3.0|4|1
+Amy's Place|41.819573|-71.399006|3.5|13|1
+Nice Slice|41.8290247|-71.4006702|4.0|42|1
+Roots Cafe|41.8222669|-71.413166|4.0|1|1
+Coffee Exchange|41.81933|-71.3991291|4.0|35|1
+Bagel Gourmet|41.823516|-71.399098|4.5|8|1
+Jake's Bar & Grille|41.816901|-71.40778|4.0|1|0
+Malachi's|41.821898|-71.392167|4.0|4|1
+Sherri's Cafe 101|41.8238081|-71.4084325|4.5|4|0
+Tealuxe Inc|41.8280166|-71.4004397|4.0|13|1
+Spice Thai Bistro and East Side Perks|41.827507|-71.399927|2.0|4|1
+Starbucks Coffee|41.81938|-71.41277|3.5|0|1
+The Whiskey Republic|41.817457|-71.401855|3.0|12|1
+La Creperie|41.827815|-71.400193|3.5|30|1
+Guido's Restaurant|41.822083|-71.3967265|4.0|5|1
+Bacaro|41.8217121|-71.4051363|4.0|17|1
+Fancheezical|41.816736|-71.4091563|4.0|6|1
+Wings & Things|41.823516|-71.399098|3.5|4|1
+City Cafe the|41.823026|-71.411108|2.5|1|1
+Shanghai Restaurant|41.8294119|-71.4009077|3.0|23|1
+Hemenway's|41.8244415|-71.4071376|3.5|27|1
+Pizza Pie-Er|41.819832|-71.395878|3.5|17|1
+The Pizza Gourmet|41.8360617|-71.4013107|3.5|8|1
+Luxe Burger Bar|41.825803|-71.414305|3.5|53|1
+Noodles 102|41.8210754|-71.3920096|4.0|7|1
+Au Bon Pain|41.827804|-71.400373|3.5|4|1
+Cuban Revolution|41.821988|-71.4157189|3.0|29|1
+XO Café|41.828387|-71.409408|3.5|2|1
+Mill's Tavern|41.8280065|-71.4092338|4.0|24|1
+Cafe Nuovo|41.827379|-71.411068|4.0|9|1
+Sakis Pizza|41.821912|-71.412512|2.0|1|1
+Aspire|41.8224114|-71.4141721|3.5|9|1
+East Side Creamery|41.822982|-71.392362|3.0|5|1
+Jolly Roger Cafe|41.8225012|-71.4051652|3.5|3|1
+Dunkin Donuts|41.8239891|-71.4128343|2.0|1|1
+Giovanni's Pizza|41.8202853|-71.4111988|5.0|0|1
+RiRa: The Irish Pub & Restaurant|41.826067|-71.412626|3.5|18|1
+Gavin's Pub & Restaurant|41.817928314209|-71.401969909668|4.5|8|1
+Bolt Coffee Co|41.820514|-71.413211|5.0|0|1
+Starbucks Coffee|41.827539|-71.400887|3.5|3|1
+Ruth's Chris Steak House|41.8261901|-71.4148967|4.0|16|1
+Cafe la France|41.8237161|-71.4099892|3.0|0|1
+Subway Sandwiches of Downtown Providence|41.8237173|-71.4129935|1.0|2|1
+Charlie's 404 Deli|41.82027|-71.401734|3.5|0|1
+The ROI Food & Music|41.818416|-71.41004|3.5|6|1
+Wings To Go|41.8294119|-71.4009077|4.0|3|0
+Blue Elephant|41.819668|-71.396915|3.5|5|0
+Gracie's|41.822046|-71.415918|4.5|40|1
+TeainSahara|41.822513|-71.39378|4.0|12|1
+Agora Restaurant & Bar|41.824969|-71.4159063|3.5|0|1
+Harry's Bar & Burger|41.828261|-71.409293|3.5|33|1
+Vanity|41.8174365|-71.4005442|3.5|5|1
+Waterplace Restaurant|41.8275423|-71.4142406|3.0|8|1
+Spike's Junkyard Dogs|41.8294385|-71.4007189|4.0|8|0
+The Congress Tavern|41.8232089|-71.4102673|3.5|10|1
+Tokyo Restaurant|41.8198037|-71.395688|3.0|12|1
+New Japan|41.822871|-71.415393|3.0|0|1
+Taste of India|41.8195632|-71.3987675|3.0|9|1
+Kabob and Curry|41.8289029|-71.40058|4.0|38|1
+Metro Cafe|41.8238081|-71.4084325|5.0|1|1
+Shark|41.8295146|-71.4008001|2.5|18|1
+Coffee King|41.8239412|-71.4153624|4.0|1|1
+Stanley's Hamburgers|41.816995|-71.4077267|3.0|4|0
+Johnny Rockets|41.829104|-71.4006|3.0|10|1
+Dairy Queen|41.8278207|-71.4158882|3.0|2|1
+Spike's Junkyard Dogs|41.8202853|-71.4111988|2.0|0|1
+Pizzeria Uno Chicago Bar & Grill|41.826605|-71.415922|3.5|8|1
+Round the Corner|41.820584|-71.393852|4.0|0|1
+P.F. Chang's China Bistro|41.828158|-71.415696|3.0|19|1
+Tortilla Flats|41.8359501|-71.4013788|3.0|39|1
+Barnsider's Mile & A Quarter|41.820827|-71.404175|4.5|2|0
+Urban Dog|41.828356|-71.4008489|4.5|0|1
+Lola's Tequila Bar & Cantina|41.8174443|-71.4017264|2.5|20|1
+McFadden's|41.8230002|-71.4094431|2.5|11|0
+Paragon|41.8280017|-71.4007768|3.5|29|1
+Antonio's Pizza|41.828916|-71.400915|4.0|24|1
+South Street Cafe|41.8173059|-71.4077019|3.5|5|1
+Everyman|41.8239891|-71.4128343|3.0|5|0
+Xtreme Pizza & Wings|41.8294119|-71.4009077|2.0|1|0
+Restaurant Prov|41.8188461|-71.4115654|2.5|0|1
