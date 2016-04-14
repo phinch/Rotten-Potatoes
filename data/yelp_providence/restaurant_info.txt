@@ -1,3 +1,4 @@
+name|latitude|longitude|stars|review_count|open
 roba!dolce|41.8281263|-71.4006111|2.0|2|0
 Asian Bistro|41.822204|-71.410016|2.5|4|1
 XO Steakhouse|41.82843|-71.4094779|4.5|3|0

@@ -1,0 +1,219 @@
+restaurant_id|name
+W-RJfufcf-GtIPrdyrJ6pQ|roba!dolce
+jfZXp0POls-M2cgSxsS8fw|Asian Bistro
+KCVy3xDOhMZBCbbLRsXvVw|XO Steakhouse
+AKfHinPZ5vdPdHRzpvSWtw|Sura
+xsciMH9Wvl6o3sUdCsz8gw|Fellini Pizzeria
+ILLYK1PwY2F5c__Dhycopw|The Capital Grille
+rPT6ak3-KvOJTxnIzYNH0w|Kartabar
+ooNlNmDvLdmPuR_b_b2Rww|Dok's Deli
+P-2zSdHB1rudqS5oGNIlqg|East Side Pockets
+TZqSbTyzsVVcHR9K2fUvcQ|Alibi Cafe
+GLoChe_wCEtZU9Ky1QYVMQ|Adesso California Cafe
+-1K9xLVS8HnG8n0g7Xq7mQ|Meeting Street Café
+L_0dqYPcUK8LrCxbSmwxkA|Silver Star Bakery
+KFfXz86HU9Svn3y_ngFnsQ|Mama Teresa of Providence
+wfS1G5lrjx_SGWBuG2690g|Pot Au Feu
+YEwDXqS6WaT37N3ZQIhbiw|Bagel Gourmet Cafe
+VmWymzt1wSYtjpm6oDXFjA|Pakarang Exquisite Thai Cuisine
+OeAOGUMAv7Yh0u9x79Jp9A|Starbucks Coffee
+hs1bNW1pkKYGoXQ39P2Ffw|United BBQ
+nqW0bWZresih2sqvOQ1diw|Taza Caffe
+HCCoVdXfEViQ0V0WIeI_xA|Souper Bowls
+N_7H_bcdjIPToXsfCTxglg|George's Deli
+NiC9LXPp-OgQcrpqOyRu3Q|Kabob N Curry
+uwi8IfY3AQO1iJ1I0B336g|Angkor Restaurant
+uaPEPXxiEf8rNFbzFyy3Cw|Cilantro Mexican Grill
+HPDZZjKAi4vmtLEvYmk2Hw|Cafe Zog
+WNjgfcndwa3h4bc4hc-Y4Q|Cafe Francaise
+2fTayx8rmxVAz23BSVH1aA|Rue-Bis
+2wu_RvBn3QYANniI6oD4pA|Cafe Noir
+SFeabOilq0-oEhI_BNj62A|Toledo Toledo Pizza In a Cone
+RIzlH7t_wVhiTFklmYC1RA|New Rivers
+YwHAVxQyHC3NekG8wUTtew|Blake's Tavern
+5ZLz8TTa1AHQJ7ZBEMUBAw|Loui's Restaurant
+xvb-6QQdvCePXl4GV56_Sw|Pinkberry Frozen Yogurt
+zOtmzrVbiiUjsqrPBLPq2w|Coco Pazzo
+OpI_3VA-qbYfyyS8_a-w6g|Nordstrom EBar
+9H1o-FdVnFrwKDDqTB5oBA|Ugly American
+jqV58g6tYX4Sx_BLx2ysMg|Reflections Cafe
+87h9WI6h9cjNHxQd0FizBA|Rue De L'espoir
+Y36qI_q817O0Wkm8QBIahg|Benders Caffe
+DduaYOg-hYThz871mDoVHQ|Dark Lady
+ASpO-JqCKBWNR08vhdbiTg|Pie in the Sky
+e3OqPQ6ayfhIXI04FXy3Ig|Juniper Frozen Yogurt
+SWwP5Na6Z_-rrrt7z0yVmQ|Pvd Pudding Pops
+fUBqSWOI5EkyXboVvov4hA|Al Forno Restaurant
+_RRfUE5mb3kuje0R8ASuJA|Starbucks Coffee
+__rO-3gkVgaHRH158jA8OA|Providence Cookie Co
+5q1rfOna_PlzdTI24MpqqQ|SideBar & Grill
+B57ux1Vy2ahWbfmbVmmKSg|Plan Bean
+ahAvfTdZnblSR6S4ZpXCtw|The Cheesecake Factory
+ul09J6JglI0j-iRyYkO51g|The Point Tavern
+NKVltLT41jYd8A1YPhkxnQ|Ben & Jerry's Ice Cream & Frozen Yogurt
+mUMGNgo6x1Tlj75o-P3UHA|Napa Valley Grille
+IL96KSxK3ov1m-1WQV8MLQ|Small Point Café
+it9mZRfzo9DsFmddSESLbw|Sawaddee Thai Restaurant
+YA1V1bpw0PPjAmztikduNA|Mike's Calzone
+TSPQ-c1Sin-at6pUUMycfA|Corporate Cafe Inc the
+nYFw5b30Td79jjm3cjABVw|Geoff's On Thayer
+mdqwn32B4RVJI8_MQLXXHg|Froyoworld
+A6dVeZf0ZKgOqKxB7y0F0w|Better Burger Company
+8WGDqkmiwlq50SRIcB_X6w|McCurdy's Junction House
+ezfOX2z0EOFH6UOQyrkRpA|Fleming's Prime Steakhouse & Wine Bar
+wvzMYKKidWIWgPHFXeUW1g|Angkor Restaurant Express
+AMcQOPu1hcSl7f6iguru3Q|Joe's American Bar & Grill
+t2tHuFNhPhlknnML7kzLww|Geoff's Superlative Sandwiches
+L3uemg97EJZ1SfjEE60Qvw|Poco Loco Taco Truck
+_dyFKoP9aoYty0Ot_lW0AA|Fish Co Bar & Grill
+BbkF6j51IbcX-ed1f-bnhA|The Duck and Bunny
+8S7RKI8swuq8V-4ZN9cDvQ|Chipotle
+L59t1jk6ONNKPLWG0nLN3w|Local 121
+1M5pHJqGLL_-t74M37uQ0Q|Parkside Rotisserie & Bar
+x05vLVOH2OQr-8ATmfItRg|McCormick & Schmick's
+T1fAeUIvj8ZLIoDGFKpIsw|Chinese Iron Wok of Ri
+JUC2w_byPiyEbXrufEik-w|Phonatic
+zR6m1J5Y_3RndYcLIRROeg|Ten Prime Steak & Sushi
+jFT6OdowrTlzt0VeJoStkg|Dunkin Donuts
+lu1rX1xpg7hbcWPnfOWMMQ|Quickly
+dQfvxeuNNqku7mozkk4Y3w|Haven Brothers
+hh92MQDje3zsN1jXi6uRKQ|Cheeseboy: Grilled Cheese To Go
+BxmSFfCPQN_bg24l44a56Q|The Dorrance
+Dn-6ZmMqHW_ATU1I-nrNjw|Capriccio
+V5DHGTNGGdyHawRWcaDfoA|Wings To Go
+24CV8Si8DulpStT7s71Agw|Cafe Choklad
+qrCGusS7YO6rxt4iiuUUuQ|Brick Alley Pizza
+6fz6hlH9LDkZ9jwtwBVOEQ|Spats Restaurant & Pub
+1-WF9A4i-0fI8XxCFbqrTA|Rick's Roadhouse
+sIsXmah-sGpHaKBjU3KOFA|Andreas Restaurant
+t7UZFLVJavx5fQCooDyaRQ|City Gyro
+LLMIzRMVcu_F7gwfdY_wSQ|Ama's
+eM8d9dpDiVvMrJrWwIRAVw|English Cellar Alehouse
+pZnk9tKEHrEIHq0NfSzXRA|Flan Y Ajo
+nWu8OljDYmLfbLQqcfW9Sw|Teriyaki and Korean House
+3QHNTTw5D0wZsGoap_OMRA|Championship Melt
+MXBuC9ys4RCJB9xPYYY8Lg|Neath's New American Bistro
+HvTmWpz-hqUd118fvm-QPA|Victoria's Pizzeria
+w9oW1PJoAjZfv85hxZbnEg|Chowder House Bar and Grill
+xswXiNLzSsyR4fLEkHtImQ|Petit Mange
+dt0WE6P8b1AHJdb9V8C9VA|Mama Kim's Korean BBQ
+Lw7lLPi2Da-daCK2rxtPIw|Sushi Express
+pN82QW8yU0kvHqo8Kya-cg|Solomon's Market
+1u5tSUPGO213ZX0WBj0uxQ|Gourmet Heaven
+_5I5EOg495_sYuYI0Iy7YQ|Au Bon Pain
+YdS4YpaCSg-cjqB66eadEQ|Fire & Ice
+0cYGdh3BVnIiLxPB88fEUg|The Blount Clam Shack and Soup Bar
+B0_HY1F7bUqB3ONhy73udQ|Viva Mexico Cantina & Grill
+hmz3GErbZNi4wBvj5lkWiw|Tazza
+0A3irNk0Kb3vQasADoQCHw|Abyssinia
+qORXhU_iKug_O7vGA8jr1Q|Dragon 2000
+oLwgMzsrvNsq-td3QrN3FQ|Brickway On Wickenden
+PPsQwCCtPPXcpgy_kCyfFQ|Café La France
+5Qg4di7XxZiR8RJ62hYXag|Hercules Mulligan's Irish Pub
+J4lY9l9LsKWBTa49cY0-mw|Providence Coal Fired Pizza
+gY7TJl5bB-UzYSo6Mo0ZOQ|O-Cha
+SKfMzNiCSCURK2ATaZFzZQ|The Apartment
+Wd9p_AlZTnN6pBHmT9YemQ|Jacky's Waterplace
+VXAJvtWSzeFzZinJRs75rg|Spice Thai Bistro
+YEaJTS5WvIHMajKskQIFzA|Starbucks Coffee
+BhjVNGhWBeWx-joM_xwS9w|Murphy's Deli & Bar
+qOHUAgrN0HldxPOniJtpXQ|The Red Fez
+oRn1Mjtr1BzwyN3-CE2lxA|Centro Restaurant and Lounge
+Dw88AIwVNK7hVUB6wQ45FA|Sakura Restaurant
+z-SwOI7QhTSMSsJ0OWEu9g|Olga's Cup and Saucer
+E39pbLivZFnQQrUR7nLOkg|Eddie & Sons Diner
+tP4B0XaGAqPKsWwtf74LYA|Raphael Bar Risto
+rblZR9xtCUgwjE19AU2y8w|Gourmet India
+QadrDmx4k6Tl7QDz4fAWdg|Blue State Coffee
+EcUL0Ixq_5L9HCdyk2GIOQ|Pizza Queen
+87LNZTmU2KXPnC-ZyN0mYg|Soban
+HhE3mzDy2ScbkyllFYP0cQ|Bagel Gourmet Ole
+PJIwOJtZvgg03qrakVfxwg|Tommy's Place
+mMbrhKD5kE5pLBi76BQbpA|3 Steeple Street Bistro & Bar
+v0cGdCsOi2VbXj2Mg5BxpQ|Café Yuni
+ZCNv3o4kekN2PPUTlP294w|The Wild Colonial Tavern
+7oPD0Kg-BEpMzYt-Z9QY2g|Eat 82
+-BDHMsD-vg6nPnIkrtKPYQ|Asian Paradise Restaurant
+8b76KB-71mOmbZteIGzO6g|Via Via IV
+KU3o2bfHa-igvS7DgnpzDw|Haruki Express
+I8dgF5_UENHKJwb0k8J49Q|Baja's Burritos
+QSB6qv6EvXebXu0n42X48A|Gordito Burrito
+w3p6mz0m1b-jPm26weDabQ|Amy's Place
+8qCse4_dRis6mqj-RqrFMg|Nice Slice
+d1PfPAYUYN_AoIw1v6cwrQ|Roots Cafe
+otrAgBvYPhpIpTezkxlebQ|Coffee Exchange
+t0CBd_dgyztTvUkGX5fPBg|Bagel Gourmet
+9-Jv7k4ajh2QnTVSXxH-lQ|Jake's Bar & Grille
+Me0m9753dQgbcxdLpQq50A|Malachi's
+SebzGPx68D3cMaLcoHSfUA|Sherri's Cafe 101
+04ZBAOo6ffXkhSICqngaIQ|Tealuxe Inc
+YrJzG2UyF6ux2A9v5-fLXA|Spice Thai Bistro and East Side Perks
+B-qruWFhAxcAEULGT1BqFQ|Starbucks Coffee
+QAxQdJ5m-wrvLUUGb0-ulw|The Whiskey Republic
+fdBaf_H31MY4nA4Yuw6MfQ|La Creperie
+qhz-qmRp30-khTbJ3DjnYw|Guido's Restaurant
+wKaal1Y4D9DIJPkHVNyP_A|Bacaro
+yNnWaqDFdfD-MqbeAtDfSQ|Fancheezical
+lSS24T_8LX_Ucq8YXZpdHg|Wings & Things
+1qj4Uhk1jqyHPLCO1RBhmQ|City Cafe the
+5OY43DZbO-IwYSQ91yRyPw|Shanghai Restaurant
+afoQr3drIs-0vbh42O0Ewg|Hemenway's
+P2r5tl57DWK5AcZ_GiSvWg|Pizza Pie-Er
+PUcbOM5EdCijAhFN9GAtBw|The Pizza Gourmet
+szmLFKB_wzz3Fb4Tqg3r7g|Luxe Burger Bar
+RD-icRypSMg6nA4Xy8dCUw|Noodles 102
+9jbiSU23TGDdBw0a94l3oA|Au Bon Pain
+5Et3v7458hRZrx-42KetZw|Cuban Revolution
+8VMY2s1dHASw_CGYJeYSZw|XO Café
+CLfX-_6CngIOjJslhNkTCA|Mill's Tavern
+-_FvwOM3_wku2zHiLjibgg|Cafe Nuovo
+PamuLXPdpmIsu8tvLQtKNw|Sakis Pizza
+EqOxdxn_ziCSkj988ERTgw|Aspire
+aGI4Y4bFjYOthrc3sVBa8g|East Side Creamery
+gupc57VIn_IOUTMtPsGmkg|Jolly Roger Cafe
+awYanXZG7hC2iutP2E9bKA|Dunkin Donuts
+tNNkU_58J-Ykkxab08p3sQ|Giovanni's Pizza
+_BG8WroxU2JbZSij6VWx_A|RiRa: The Irish Pub & Restaurant
+DDyFfkS0987e1aQEAEZEhA|Gavin's Pub & Restaurant
+atnPiI1PIfO9ICFDrae6TA|Bolt Coffee Co
+Gdu0UVTG8a9M8syTmT4b6Q|Starbucks Coffee
+kATS8uEAIQfeD66JypmgaQ|Ruth's Chris Steak House
+WNjidmdRadrFFdNmBq9Osw|Cafe la France
+Taha6oEOUQUzPhjYSFlkSw|Subway Sandwiches of Downtown Providence
+BMECSEbSK_ac35GbESCT6A|Charlie's 404 Deli
+qylEvwzt5M_p7QTveZlEvQ|The ROI Food & Music
+6SKPyuuG7duv-G2XGCafiQ|Wings To Go
+9W-k-SJpyEZF1hmiK8MA5Q|Blue Elephant
+Mxn822gLYwJp128pbwu3hg|Gracie's
+3Fl9FLuDyOiqXOU8iM2Aqw|TeainSahara
+XT2K7Q5F8tJ21NnNvzt7cA|Agora Restaurant & Bar
+bKiYncygmFqKC27CZe81TA|Harry's Bar & Burger
+rdvWYwtOW6Mw_LTNAqlsQQ|Vanity
+QNU9hn3bg_HF6v6UndA6wQ|Waterplace Restaurant
+LahgT0Dec0B6NSws7VHiJQ|Spike's Junkyard Dogs
+-93uBoiVyQ2ZPABERT621w|The Congress Tavern
+G7zdZt33PU_Gfmt3qHD88w|Tokyo Restaurant
+EKv1-JvdERKlABFlEN3g5g|New Japan
+9hjuKkPO0LryqAq1xSfpuA|Taste of India
+RWD95WS_ViX5PE7idDICBQ|Kabob and Curry
+CS0IkhLaW6VzPDmn1Qxe4A|Metro Cafe
+YEUgaDmoKvYQynNgVGenbw|Shark
+GCgu0btCydmDs2XuU0dAmg|Coffee King
+Zeb06JwkXIvweAkGOsWDqg|Stanley's Hamburgers
+uJA6Perynk-drhKfX5Fh4w|Johnny Rockets
+11ZM3Uvi8N-zskjWAD3M2Q|Dairy Queen
+MQYY5DQTowsTFXlPhZ9PSw|Spike's Junkyard Dogs
+4EljqY21fLOtLaoWCJlsIQ|Pizzeria Uno Chicago Bar & Grill
+51kNDEGpelJyQRefOVmn6g|Round the Corner
+CUhwFEU13F6NC98VkwYElg|P.F. Chang's China Bistro
+MGOt6JSu0NPI-DKhWRTTeA|Tortilla Flats
+ut_1gB1F-m-tSZwd32w6hw|Barnsider's Mile & A Quarter
+sKdp6dcLfyXWVWWU6OJPsw|Urban Dog
+7H5fb4BnnaX3IT4DPb724Q|Lola's Tequila Bar & Cantina
+SkY-3itZowxA9lByHVX2Dg|McFadden's
+WhANqUQu_SJIuD7g8AXTAg|Paragon
+eAGvvpsMsf6TRlR3aKmngQ|Antonio's Pizza
+GLdIHOP5VUCdgAiuQnKmPA|South Street Cafe
+wMXggu190ZT0smWMicTG-g|Everyman
+dKv6bbqs6Otq6YKNWby4uQ|Xtreme Pizza & Wings
+rB3-X_DJWrwInNNJtKPnpQ|Restaurant Prov
