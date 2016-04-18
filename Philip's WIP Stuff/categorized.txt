@@ -1,0 +1,184 @@
+Japanese: 14
+    Sushi Bars|7
+    Japanese|7
+
+Chinese: 6
+    Cantonese|1
+    Chinese|5
+
+Thai: 6
+    Thai|6
+
+Indian: 4
+    Indian|4
+
+Korean: 6
+    Korean|6
+
+Asian: 47
+    Japanese: 14
+    Chinese: 6
+    Thai: 6
+    Indian: 4
+    Korean:6
+    Pakistani|2
+    Mongolian|1
+    Asian Fusion|4
+    Vietnamese|2
+    Cambodian|2
+
+-----------------------------
+
+French: 7
+    French|4
+    Creperies|3
+
+Italian: 6
+    Italian|6
+
+Spanish: 3
+    Tapas/Small Plates|2
+    Tapas Bars|1
+
+Great Britain and Ireland: 5
+    Irish|3
+    British|2
+
+European: 21
+    French: 7
+    Italian: 6
+    Spanish: 3 
+    GB: 5
+
+-----------------------------
+
+Bar: 36
+    Bar|4
+    Dive Bar|2
+    Cocktail Bars|1
+    Dive Bars|1
+    Pub|4
+    Beer Bar|1
+    Bars|12
+    Pubs|7
+    Gastropubs|1
+    Wine Bars|3
+
+Cafe: 40
+    Coffee & Tea|27
+    Bubble Tea|1
+    Cafes|6
+    Cafe|4
+    Juice Bar|2
+
+-----------------------------
+
+American: 92
+    Steakhouses|3
+    Tex-Mex|2
+    American (New)|12
+    Breakfast & Brunch|8
+    Modern American|11
+    Traditional American|9
+    Steakhouse|5
+    Burgers|8
+    Diners|6
+    Fast Food|5
+    Hot Dogs|2
+    Seafood|10
+    American (Traditional)|11
+
+Latin American: 12
+    Tex-Mex|2
+    Cuban|1
+    Cajun/Creole|1
+    Latin American|1
+    Mexican|7
+
+-----------------------------
+
+Mediterannean: 7
+    Mediterranean|3
+    Moroccan|1
+    Greek|2
+    Middle Eastern|1
+
+-----------------------------
+
+Dessert: 23
+    Desserts|5
+    Creperies|3
+    Ice Cream & Frozen Yogurt|9
+    Bakeries|4
+    Bakery|1
+    Donuts|1
+
+-----------------------------
+
+Breakfast and Brunch: 15
+    Breakfast & Brunch|8
+    Bagels|7
+
+-----------------------------
+
+Stands and Trucks: 8
+    Food Stands|1
+    Food Trucks|4
+    Market Stall|3
+
+-----------------------------
+
+African: 1
+    Ethiopian|1
+
+-----------------------------
+
+Non-"American": 87
+    Mediterannean: 7 
+    African: 1
+    Latin American: 12
+    European: 21
+    Asian: 47
+
+Non-"White": 67
+    Mediterannean: 7
+    African: 1
+    Latin American: 12
+    Asian: 47
+
+-----------------------------
+
+Pizza: 17
+    Pizza|17
+
+Sandwiches and Deli: 28
+    Sandwiches|22
+    Delis|6
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+INITIAL DISPLAY (for possible viz):
+    American
+    Asian
+    European
+    Dessert
+    Cafe
+    Bar
+
+OTHER CHOICES:
+    Pizza
+    Sandwiches+Deli
+    Non-American
+    Non-White
+    Food Trucks
+    Brunch
+    Mediterannean
+    Latin American
+    French
+    Italian
+    Korean 
+    Chinese
+    Thai
+    Japanese

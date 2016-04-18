@@ -1,0 +1,90 @@
+Tapas/Small Plates|2
+Gluten-Free|3
+Sandwiches|22
+Creperies|3
+Sushi Bars|7
+French|4
+Restaurants|3
+Karaoke|1
+Grocery|1
+Bar|4
+Dive Bar|2
+Salad|3
+Bakery|1
+Cocktail Bars|1
+Dive Bars|1
+Italian|6
+Steakhouses|3
+Mediterranean|3
+Accessories|1
+Moroccan|1
+Desserts|5
+Delis|6
+Cantonese|1
+Tex-Mex|2
+Internet Cafes|1
+Concert Hall|1
+Chicken Wings|3
+Dance Clubs|2
+American (New)|12
+Breakfast & Brunch|8
+Food Stands|1
+Coffee & Tea|27
+Modern American|11
+Pub|4
+Tapas Bars|1
+Bubble Tea|1
+Lounges|1
+Thai|6
+Barbeque|4
+Fish & Chips|1
+Cuban|1
+Cajun/Creole|1
+Traditional American|9
+Cafes|6
+Greek|2
+Steakhouse|5
+Internet Cafe|1
+Beer Bar|1
+Ice Cream & Frozen Yogurt|9
+Bars|12
+Chinese|5
+Burgers|8
+Asian Fusion|4
+Ethiopian|1
+Food Trucks|4
+Cafe|4
+Middle Eastern|1
+Indian|4
+Latin American|1
+Korean|6
+Pakistani|2
+Jewelry|1
+Vegan|1
+Pubs|7
+Diners|6
+Gastropubs|1
+Bakeries|4
+Vegetarian|1
+N/A|13
+Irish|3
+Mongolian|1
+Wine Bars|3
+Vietnamese|2
+Donuts|1
+Bagels|7
+Fast Food|5
+Pizza|17
+Venues & Event Spaces|1
+Music Venues|1
+Market Stall|3
+Hot Dogs|2
+Seafood|10
+British|2
+Soup|2
+Mexican|7
+American (Traditional)|11
+Japanese|7
+Juice Bar|2
+Cambodian|2
+Specialty Food|1
