@@ -34,7 +34,7 @@ with open("data/yelp_providence/yelp_pg.csv", "wb") as r:
         page = requests.get(pagelink)
         tree = html.fromstring(page.content)
 
-        price = tree.xpath('//*[@id="wrap"]/div[3]/div/div[1]/div/div[2]/div[1]/div/div[2]/span[1]/span/text()')
+        price = tree.xpath('//*[@id="wrap"]/div[3]/div/div[1]/div/div[2]/ div[1]/div/div[2]/span[1]/span/text()')
         if price == []:
             price = "N/A"
         else:
