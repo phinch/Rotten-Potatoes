@@ -33,12 +33,11 @@ for i in range(len(restaurant_urls) - 1):
     info_dict[name] = location
     print info_dict[name]
 
-with open("../data/opentable_location.csv", "wb") as r:
-    rwriter = csv.writer(r, delimiter = "|")
-    rwriter.writerow(["Name", "Location"])
+with open("../data/opentable_location.txt", "wb") as r:
+    r.write("Name|Location\n")
 
     for key in info_dict:
-        rwriter.writerow([key, info_dict[key]])
+        r.write(key+"|" + info_dict[key]+"\n")
         
 """
 # Open File
