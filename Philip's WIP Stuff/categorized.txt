@@ -21,6 +21,7 @@ Asian: 47
     Thai: 6
     Indian: 4
     Korean:6
+
     Pakistani|2
     Mongolian|1
     Asian Fusion|4
@@ -73,9 +74,8 @@ Cafe: 40
 
 -----------------------------
 
-American: 92
+American: 91
     Steakhouses|3
-    Tex-Mex|2
     American (New)|12
     Breakfast & Brunch|8
     Modern American|11
@@ -97,7 +97,7 @@ Latin American: 12
 
 -----------------------------
 
-Mediterannean: 7
+Mediterranean: 7
     Mediterranean|3
     Moroccan|1
     Greek|2
