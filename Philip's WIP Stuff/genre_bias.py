@@ -1,21 +1,29 @@
 """
 Measures bias between review sites organized by genre. 
 Genres have been manually created by observing the data.
-A list of possible genres:
-    Contemporary (includes Contemporary European/American and American(New))
-    Italian
-    Mediterranean (includes Greek and Middle Eastern)
-    Steakhouse
-    Seafood
+INITIAL DISPLAY:
     American
-    "Asian" (may be more effective in grouping in Providence, includes Pan-Asian)
-    European (Opentable seems to have a very generic Euro category)
-    Bar (includes Cocktail Bar, Gastro Pub?)
+    Asian
+    European
+    Dessert
+    Cafe
+    Bar
+
+OTHER CHOICES:
     Pizza
-    Latin American
+    Sandwiches+Deli
+    Non-American
+    Non-White
+    Food Trucks
     Brunch
-Yelp seems to have the most definitive genres so using Yelp as the definition of bias and then matching by name is likely the best way to divide.
-At the same time, thinking about what conclusions we're looking for, maybe "European" is a general enough division that would provide critical mass of data.
+    Mediterannean
+    Latin American
+    French
+    Italian
+    Korean 
+    Chinese
+    Thai
+    Japanese
 """
 from lxml import html
 import requests

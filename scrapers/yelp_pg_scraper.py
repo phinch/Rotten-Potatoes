@@ -25,7 +25,7 @@ next(csv_reader, None)
 
 with open("data/yelp_providence/yelp_pg.csv", "wb") as r:
     rwriter = csv.writer(r, delimiter = "|")
-    rwriter.writerow(["Name", "Price", "Genres", "Rating", "Review Count"])
+    rwriter.writerow(["Name", "Price", "Genres", "Rating", "Review Count", "Address"])
 
     for line in csv_reader:
         restaurant = line[0]
@@ -45,7 +45,8 @@ with open("data/yelp_providence/yelp_pg.csv", "wb") as r:
         name = name.strip()
 
         score = tree.xpath('//*[@id="wrap"]/div[3]/div/div[1]/div/div[2]/div[1]/div/div[1]/div[1]/div/i/@title')
-        if score == []:
+        if score == []: 
+            print "No score: ", name, price
             continue
         score = score[0].split()[0]
 
@@ -68,9 +69,21 @@ with open("data/yelp_providence/yelp_pg.csv", "wb") as r:
                 gcount += 1
                 genre = tree.xpath(genre_base+str(gcount)+genre_end)
 
-        print name.encode("utf-8"), price, genres, score, count
+        address = ""
 
-        rwriter.writerow([name.encode("utf-8"), price, genres, score, count])
+        street = tree.xpath('//*[@id="wrap"]/div[3]/div/div[1]/div/div[4]/div[1]/div/div[2]/ul/span/li/strong/address/span[1]/text()')
+        
+        if street == []:
+            street = tree.xpath('//*[@id="wrap"]/div[3]/div/div[1]/div/div[3]/div[1]/div/div[2]/ul/span/li/strong/address/span[1]/text()')
+
+        if street == []:
+            address = "n/a"
+        else:
+            address = street[0]
+
+        print name.encode("utf-8"), price, genres, score, count, address
+
+        rwriter.writerow([name.encode("utf-8"), price, genres, score, count, address])
 
 
 
