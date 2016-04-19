@@ -40,7 +40,7 @@ for frest in f:
 		prange = (ftup[0] + gtup[0]) / 2
 		if prange < 2:
 			y_pt1.append(gtup)
-			ot_pt3.append(ftup)
+			ot_pt1.append(ftup)
 		elif prange < 3:
 			y_pt2.append(gtup)
 			ot_pt2.append(ftup)
