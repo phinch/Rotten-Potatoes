@@ -96,7 +96,7 @@ matchdata = {}
 yelp_data = csv.reader(open('../data/yelp_providence/yelp_pg.csv', 'rb'), delimiter = "|")
 next(yelp_data, None)
 for line in yelp_data:
-    yelpinfo[line[5]] = [line[0], line[1], line[2], line[3]]
+    yelpinfo[line[5]] = [line[0], line[1], line[2], line[3], line[4]]
 
 foursquare_reader = csv.reader(open('../data/foursquare/foursquare.csv', 'rb'), delimiter = "|")
 next(foursquare_reader, None)
@@ -104,13 +104,24 @@ for line in foursquare_reader:
     address = line[4].split(" Ste")[0]
     if address in yelpinfo:
         matchdata[address] = yelpinfo[address]
-        matchdata[address] += [float(line[2])/2]
+        matchdata[address] += [line[1], float(line[2])/2, line[3]]
 
-#Data is now in order Address: Name, Price Level, Genres, Yelp Score, FS Score
+#Data is now in order Address: Name, Yelp Price, Genres, Yelp Score, Yelp Count, FS Price, FS Score (normalized), FS Count
 
-#Split the genres
-#for key in matchdata:
-    
-        
+with(open('../data/name_matches/yelp_foursquare.csv', 'wb')) as r:
+    rwriter = csv.writer(r, delimiter = "|")
+    rwriter.writerow(["Name", "Price Average", "Genres", "Yelp Score", "Yelp Count", "FS Score", "FS Count"])
 
-
+    for key in matchdata:
+        restaurant = matchdata[key]
+        name = restaurant[0]
+        if restaurant[1] != "N/A" and restaurant[5] != "N/A":
+            price = (float(restaurant[1]) + float(restaurant[5]))/2
+        else:
+            price = restaurant[1]
+        genres = restaurant[2]
+        yscore = restaurant[3]
+        ycount = restaurant[4]
+        fscore = restaurant[6]
+        fcount = restaurant[7]
+        rwriter.writerow([name, price, genres, yscore, ycount, fscore, fcount])
