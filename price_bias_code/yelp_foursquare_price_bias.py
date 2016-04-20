@@ -99,6 +99,16 @@ if sumrevs == 0:
 else:
 	fs3 = sumrats / sumrevs
 
-print str(yelp1) + " and " + str(fs1)
-print str(yelp2) + " and " + str(fs2)
-print str(yelp3) + " and " + str(fs3)
+print "\n"
+print "$ <= x < $$"
+print "-----------"
+print "Yelp: " + str(yelp1) + "; Foursquare: " + str(fs1) 
+print "difference: " + str(yelp1 - fs1) + "\n"
+print "$$ <= x < $$$"
+print "-------------"
+print "Yelp: " + str(yelp2) + "; Foursquare: " + str(fs2)
+print "difference: " + str(yelp2 - fs2) + "\n"
+print "$$$ <= x <= $$$$"
+print "----------------"
+print "Yelp: " + str(yelp3) + "; Foursquare: " + str(fs3)
+print "difference: " + str(yelp3 - fs3) + "\n"

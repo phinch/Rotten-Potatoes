@@ -120,6 +120,15 @@ if sumrevs == 0:
 else:
 	ot3 = sumrats / sumrevs
 
-print str(yelp1) + " and " + str(ot1)
-print str(yelp2) + " and " + str(ot2)
-print str(yelp3) + " and " + str(ot3)
+print "\n"
+print "$ <= x < $$"
+print "-----------"
+print "Yelp: " + str(yelp1) + "; OpenTable: " + str(ot1) + "\n"
+print "$$ <= x < $$$"
+print "-------------"
+print "Yelp: " + str(yelp2) + "; OpenTable: " + str(ot2)
+print "difference: " + str(yelp2 - ot2) + "\n"
+print "$$$ <= x <= $$$$"
+print "----------------"
+print "Yelp: " + str(yelp3) + "; OpenTable: " + str(ot3)
+print "difference: " + str(yelp3 - ot3) + "\n"

@@ -64,7 +64,7 @@ stars = 0
 opnames = csv.reader(open('data/opentable_names.txt', 'rb'), delimiter = "|")
 for line in opnames:
     count += 1
-    filename = line[0] + ".csv"
+    filename = "data/opentable_csvs/" + line[0] + ".csv"
     stars += otread(filename)
 
 ostars = (stars/count)
