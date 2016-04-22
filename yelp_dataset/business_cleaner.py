@@ -58,6 +58,7 @@ with open("business.txt", "wb") as r:
 		stars = elt['stars']
 		review_count = elt['review_count']
 		categories = elt['categories']
+		street_addr = elt['full_address'].split("\n")[0]
 
 		genres = ""
 		for c in range(0,len(categories)):
@@ -178,6 +179,8 @@ with open("business.txt", "wb") as r:
 		        if street != []:
 		        	# TODO: compare street[0] to first line in full_address
 		        	pageFound = True
+		        	print street[0]
+		        	print street_addr
 
 				price = ""
 				p = tree.xpath('//*[@id="wrap"]/div[3]/div/div[1]/div/div[2]/div[1]/div/div[2]/span[1]/span/text()')
