@@ -116,6 +116,8 @@ with open("business.txt", "wb") as r:
 				idx += 1
 				continue
 				# TODO: add support for apostrophe to dash (line 48)
+			elif name[idx] == '!':
+				continue
 			else:
 				url_additive += name[idx]
 
