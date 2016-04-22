@@ -99,38 +99,63 @@ scores = {} #Name of genre, [yscore, ycount, fscore, fcount]
 yfs_reader = csv.reader(open('../data/name_matches/yelp_foursquare.csv', 'rb'), delimiter = "|")
 next(yfs_reader, None)
 
-ytotal = 0
-ytotalcount = 0
-ftotal = 0
-ftotalcount = 0
+ytotal = 0.0
+ytotalcount = 0.0
+ftotal = 0.0
+ftotalcount = 0.0
+
+for line in yfs_reader:
+    genres = line[2].split(" /// ")
+    if genres[0] == "N/A":
+        continue
+    allcats = []
+    for genre in genres:
+        if genre in categories:
+            cats = categories[genre]
+            for category in cats:
+                if category not in allcats:
+                    allcats += [category]
+    ycount = int(line[4])
+    yscore = float(line[3])*ycount*len(allcats)
+    fcount = int(line[6])
+    fscore = float(line[5])*fcount*len(allcats)
+
+    ytotal += yscore
+    ftotal += fscore
+    ytotalcount += ycount
+    ftotalcount += fcount
+    
+
+yfs_reader = csv.reader(open('../data/name_matches/yelp_foursquare.csv', 'rb'), delimiter = "|")
+next(yfs_reader, None)
 
 for line in yfs_reader: #Name|Price Average|Genres|Yelp Score|Yelp Count|FS Score|FS Count
     genres = line[2].split(" /// ")
     if genres[0] == "N/A":
         continue
     ycount = int(line[4])
-    yscore = float(line[3])*ycount
     fcount = int(line[6])
-    fscore = float(line[5])*fcount
-
-    ytotal += yscore
-    ytotalcount += ycount
-    ftotal += fscore
-    ftotalcount += fcount
+    yscore = float(line[3])*ycount/ytotalcount
+    fscore = float(line[5])*fcount/ftotalcount
 
     for genre in genres:
         if genre not in categories:
             continue
         else:
+            done = []
             maps = categories[genre]
             for category in maps:
-                if category in scores:
-                    scores[category][0] += yscore
-                    scores[category][1] += ycount
-                    scores[category][2] += fscore
-                    scores[category][3] += fcount
+                if category in done:
+                    continue
                 else:
-                    scores[category] = [yscore, ycount, fscore, fcount]
+                    if category in scores:
+                        scores[category][0] += yscore
+                        scores[category][1] += ycount
+                        scores[category][2] += fscore
+                        scores[category][3] += fcount
+                    else:
+                        scores[category] = [yscore, ycount, fscore, fcount]
+                    done += category
 
 #Total bias throughout the website
 naturalbias = round(ytotal/ytotalcount - ftotal/ftotalcount, 2)
@@ -139,15 +164,20 @@ with(open('../data/bias_data/yelp_fs_bias.csv', 'wb')) as r:
     rwriter = csv.writer(r, delimiter = "|")
     rwriter.writerow(["Genre", "Yelp", "Foursquare", "Adjusted Bias", "Site Bias"])
 
+    totaldiff = 0
+
     for genre in scores:
         info = scores[genre]
-        yelp = info[0]/info[1]
-        foursquare = info[2]/info[3]
+        yelp = info[0]*ytotalcount/info[1]
+        foursquare = info[2]*ftotalcount/info[3]
         bias = round(yelp-foursquare, 2)
+        totaldiff = totaldiff + bias - naturalbias
         rwriter.writerow([genre, round(yelp, 2), round(foursquare, 2), bias, naturalbias])
 
+print totaldiff
 
 
+#####################################
 ###YELP AND OPENTABLE
 yelpdata = {}
 otdata = {}
@@ -183,7 +213,7 @@ ytotalcount = 0
 ottotal = 0
 ottotalcount = 0
 
-while yname[0] != "Paragon": #TODO
+while yname[0] != "Paragon": #TODO: Actually check for end of file instead of being lazy
     if (otname[0] not in otdata) or (yname[0] not in yelpdata):
         print yname, otname
         yname = ynames_reader.next()
@@ -193,8 +223,8 @@ while yname[0] != "Paragon": #TODO
     opentable = otdata[otname[0]]
     yelp = yelpdata[yname[0]]
 
-    genres = yelp[0].split(" /// ")
-    if genres[0] == "N/A":
+    genres = yelp[0]
+    if genres == "N/A":
         yname = ynames_reader.next()
         otname = otnames_reader.next()
         continue
@@ -210,19 +240,53 @@ while yname[0] != "Paragon": #TODO
     ottotal = otscore
     ottotalcount = otcount
 
+    yname = ynames_reader.next()
+    otname = otnames_reader.next()
+
+ynames_reader = csv.reader(open('../yelp_matches_with_opentable.txt', 'rb'))
+otnames_reader = csv.reader(open('../opentable_matches_with_yelp.txt', 'rb'))
+
+yname = ynames_reader.next()
+otname = otnames_reader.next()
+
+while yname[0] != "Paragon": #TODO: Actually check for end of file instead of being lazy
+    if (otname[0] not in otdata) or (yname[0] not in yelpdata):
+        print yname, otname
+        yname = ynames_reader.next()
+        otname = otnames_reader.next()
+        continue
+        
+    opentable = otdata[otname[0]]
+    yelp = yelpdata[yname[0]]
+
+    genres = yelp[0].split(" /// ")
+    if genres[0] == "N/A":
+        yname = ynames_reader.next()
+        otname = otnames_reader.next()
+        continue
+    ycount = int(yelp[2])
+    otcount = int(opentable[1])
+    yscore = float(yelp[1])*ycount/ytotalcount
+    otscore = float(opentable[0])*otcount/ottotalcount
+
     for genre in genres:
         if genre not in categories:
             continue
         else:
+            done = []
             maps = categories[genre]
             for category in maps:
-                if category in scores:
-                    scores[category][0] += yscore
-                    scores[category][1] += ycount
-                    scores[category][2] += otscore
-                    scores[category][3] += otcount
+                if category in done:
+                    continue
                 else:
-                    scores[category] = [yscore, ycount, otscore, otcount]
+                    if category in scores:
+                        scores[category][0] += yscore
+                        scores[category][1] += ycount
+                        scores[category][2] += otscore
+                        scores[category][3] += otcount
+                    else:
+                        scores[category] = [yscore, ycount, otscore, otcount]
+                    done += category
 
     yname = ynames_reader.next()
     otname = otnames_reader.next()
@@ -235,8 +299,8 @@ with(open('../data/bias_data/yelp_ot_bias.csv', 'wb')) as r:
 
     for genre in scores:
         info = scores[genre]
-        yelp = info[0]/info[1]
-        opentable = info[2]/info[3]
+        yelp = info[0]/info[1]*ytotalcount
+        opentable = info[2]/info[3]*ottotalcount
         bias = round(yelp-opentable, 2)
         rwriter.writerow([genre, round(yelp, 2), round(opentable, 2), bias, naturalbias])
 
