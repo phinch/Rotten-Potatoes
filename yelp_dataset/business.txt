@@ -1,0 +1,8 @@
+business_id|name|city|state|latitude|longitude|stars|review_count|price|genres
+5UmKMjUEUNdYWqANhGckJw|Mr Hoagie|Dravosburg|PA|40.3543266|-79.9007057|4.5|4|1|Fast Food
+mVHrayjG3uZ_RLHkLj-AMg|Emil's Lounge|rankin|PA|40.4134643|-79.8802474|5.0|20|1|Bars,American (New),Nightlife,Lounges
+KayYbHCt-RkbGcPdGOThNg|Alexion's Bar & Grill|Carnegie|PA|40.415517|-80.067534|4.0|21|1|Bars,American (Traditional),Nightlife
+wJr6kSA5dchdgOdwH6dZ2w|Kings Family Restaurant|Carnegie|PA|40.3875124|-80.0932152|3.5|8|1|Burgers,Breakfast & Brunch,American (Traditional)
+8Nm_jcCYtMXYW0ODSHDiXA|Sapporo Japanese Steakhouse|Pittsburgh|PA|40.4400036|-80.0909106|4.5|7|2|Japanese
+T49ZvBa6mD4xHSmjHe-ArA|R & B's Pizza Place|Bellvue|PA|40.4941577|-80.0532928|4.0|14|1|Pizza
+eOv0Dbq2E8sd0CKMAqTImw|Luigi's Pizzeria|Bellevue|PA|40.495887|-80.056877|4.0|17|2|Pizza
