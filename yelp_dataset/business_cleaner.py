@@ -175,12 +175,10 @@ with open("business.txt", "wb") as r:
 		       	if street == []:
 		        	street = tree.xpath('//*[@id="wrap"]/div[3]/div/div[1]/div/div[3]/div[1]/div/div[2]/ul/span/li/strong/address/span[1]/text()')
 
-		        # TODO: check to make sure address matches the street address in the full_address attribute of the json object
+		        # check to ensure correct location
 		        if street != []:
-		        	# TODO: compare street[0] to first line in full_address
-		        	pageFound = True
-		        	print street[0]
-		        	print street_addr
+		        	if street[0] == street_addr:
+		        		pageFound = True
 
 				price = ""
 				p = tree.xpath('//*[@id="wrap"]/div[3]/div/div[1]/div/div[2]/div[1]/div/div[2]/span[1]/span/text()')
