@@ -82,6 +82,7 @@ with open("business.txt", "wb") as r:
 		dashes (ex. co-op) - leave as is
 		numbers (ex. No 1 China House) - leave as is
 		restaurants with locational specifiers (ex. Mad Mex - South Hills) - take away spaces on either side of the dash
+		restaurants with + separators (ex. Bottled Blonde Pizzeria + Beer Garden) - delete +
 		special characters - utf-8 encoding handles this I believe
 		extra space at end (ex. Lot 17 ) - delete
 		'''
@@ -102,6 +103,9 @@ with open("business.txt", "wb") as r:
 			elif (name[idx] == ' ') and (idx <= len(name)-3) and (name[idx+1] == '-') and (name[idx+2] == ' '):
 				toAdd = 2
 				url_additive += "-"
+			elif (name[idx] == ' ') and (idx <= len(name)-3) and (name[idx+1] == '+') and (name[idx+2] == ' '):
+				toAdd = 2
+				url_additive += "-"
 			elif (name[idx] == ' ') and (idx != len(name)-1) and (name[idx+1] != ' '):
 				url_additive += "-"
 			elif (name[idx] == '.') and (idx != len(name)-1) and (name[idx+1] != ' '):
@@ -118,6 +122,8 @@ with open("business.txt", "wb") as r:
 				# TODO: add support for apostrophe to dash (line 48)
 			elif name[idx] == '!':
 				continue
+			elif name[idx] == '+':
+				url_additive += "-"
 			elif (name[idx] == '-') and (name[idx-1] == ' '):
 				continue
 			else:
