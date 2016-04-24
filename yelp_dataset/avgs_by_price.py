@@ -22,6 +22,7 @@ with open('business.txt') as f:
 			if elt != 'N/A\n':
 				num_scores += 1
 				sum_scores += float(elt)
+		print num_scores
 		avgs[key] = sum_scores/float(num_scores)
 
 	for key in avgs:
