@@ -35,167 +35,65 @@ import csv
 url_base = "http://www.yelp.com/biz/"
 
 data = []
-
+"""
 # with open('restaurants.json') as f:
 #     for line in f:
 #         data.append(json.loads(line))
 with open('test.json') as f:
     for line in f:
         data.append(json.loads(line))
-
+"""
 # cities = []
 
+scores = {}
+score_reader = csv.reader(open("review.txt", 'rb'), delimiter = "|")
+next(score_reader, None)
+
+for line in score_reader:
+    bid = line[0]
+    score = int(line[1])
+    if bid not in scores:
+        scores[bid] = [score, 1]
+    else:
+        scores[bid][0] += score
+        scores[bid][1] += 1
+
 with open("business.txt", "wb") as r:
-	# with open("restaurants.json", "wb") as s:
-	r.write("business_id|name|city|state|latitude|longitude|stars|review_count|price|genres\n")
-	for elt in data:
-		business_id = elt['business_id'].encode("utf-8")
-		name = elt['name'].encode("utf-8")
-		city = elt['city'].encode("utf-8")
-		state = elt['state'].encode("utf-8")
-		latitude = elt['latitude']
-		longitude = elt['longitude']
-		stars = elt['stars']
-		review_count = elt['review_count']
-		categories = elt['categories']
-		street_addr = elt['full_address'].split("\n")[0]
+    r.write("business_id|name|city|state|latitude|longitude|stars|review_count|price|genres|avg score\n")
+    with open('restaurants.json') as f:
+        for line in f:
+            elt = json.loads(line)
+            business_id = elt['business_id'].encode("utf-8")
+            name = elt['name'].encode("utf-8")
+            city = elt['city'].encode("utf-8")
+            state = elt['state'].encode("utf-8")
+            latitude = elt['latitude']
+            longitude = elt['longitude']
+            stars = elt['stars']
+            review_count = elt['review_count']
+            categories = elt['categories']
+            street_addr = elt['full_address'].split("\n")[0]
 
-		genres = ""
-		for c in range(0,len(categories)):
-			if categories[c] != "Restaurants":
-				genres += categories[c]
-			if (c != len(categories)-1) and (categories[c+1] != "Restaurants"):
-				genres += ","
+            if "Price Range" not in elt['attributes']:
+                price = "N/A"
+            else:
+                price = elt['attributes']['Price Range']
+            categories = elt['categories']
 
-		# json.dump(elt, s)
-		# s.write("\n")
+            genres = ""
+            if categories == []:
+                genres = "N/A"
+            else:
+                for i in range(0, len(categories)):
+                    if categories[i] != "Restaurants":
+                        genres += categories[i].encode("utf-8")
+                        if i != (len(categories) - 1) and categories[i+1] != "Restaurants":
+                            genres += " /// "
+            
+            if business_id in scores:
+                score = round(float(scores[business_id][0])/scores[business_id][1], 2)
+            else:
+                score = "N/A"
 
-		# cities.append(city)
-			
-		'''
-		NOTES ON URLs:
-		general rule: base url + name components separated by '-' + city name
-		strip apostrophes - possessives, keep together; others (ex. D'Oro), strip and space separate SOMETIMES (ex. exception: Eat'n Park -> eat n)
-		replace ampersands with 'and'
-		chain restaurant urls - must iterate through appended index at end until address matches
-		periods with no space (ex. P.F. Changs) - strip punctuation and space separate
-		dashes (ex. co-op) - leave as is
-		numbers (ex. No 1 China House) - leave as is
-		restaurants with locational specifiers (ex. Mad Mex - South Hills) - take away spaces on either side of the dash
-		restaurants with + separators (ex. Bottled Blonde Pizzeria + Beer Garden) - delete +
-		special characters - utf-8 encoding handles this I believe
-		extra space at end (ex. Lot 17 ) - delete
-		'''
-
-	# city_set = set(cities)
-	# for c in city_set:
-	# 	print c
-
-		# clean restaurant names
-		url_additives = [] # accounts for apostrophe anomalies
-
-		url_additive = ""
-		idx = 0
-		while idx < len(name):
-			toAdd = 0
-			if name[idx] == '&':
-				url_additive += "and"
-			elif (name[idx] == ' ') and (idx <= len(name)-3) and (name[idx+1] == '-') and (name[idx+2] == ' '):
-				toAdd = 2
-				url_additive += "-"
-			elif (name[idx] == ' ') and (idx <= len(name)-3) and (name[idx+1] == '+') and (name[idx+2] == ' '):
-				toAdd = 2
-				url_additive += "-"
-			elif (name[idx] == ' ') and (idx != len(name)-1) and (name[idx+1] != ' '):
-				url_additive += "-"
-			elif (name[idx] == '.') and (idx != len(name)-1) and (name[idx+1] != ' '):
-				url_additive += "-"
-			elif (name[idx] == '.') and (idx != len(name)-1) and (name[idx+1] == ' '):
-				toAdd = 1
-				url_additive += "-"	
-			elif (name[idx] == ' ') and (idx == len(name)-1):
-				idx += 1
-				continue
-			elif (name[idx] == '\'') and (idx != len(name)-1):
-				idx += 1
-				continue
-				# TODO: add support for apostrophe to dash (line 48)
-			elif name[idx] == '!':
-				continue
-			elif name[idx] == '+':
-				url_additive += "-"
-			elif (name[idx] == '-') and (name[idx-1] == ' '):
-				continue
-			else:
-				url_additive += name[idx]
-
-			idx = idx + 1 + toAdd
-
-		url_additives.append(url_additive + "-")
-
-		'''
-		NOTES ON CITIES:
-		if there is a slash (ex. Pittsburgh/Waterfront) - replace with '-'
-		apostrophes (ex. L'Ile) - replace with '-'
-		multiword with parentheses (ex. Weingarten (Baden)) - take away parentheses, separate with '-'
-		periods (ex. Ft. Mill) - delete
-		'''
-
-		# clean city names
-		clean_city = ""
-		c_idx = 0
-		while c_idx < len(city):
-			idx_Add = 0
-			if city[c_idx] == '/':
-				clean_city += "-"
-			elif city[c_idx] == '\'':
-				clean_city += "-"
-			elif city[c_idx] == '.':
-				idx_Add = 1
-				clean_city += "-"
-			elif (city[c_idx] == '(') or (city[c_idx] == ")"):
-				continue
-			elif (city[c_idx] == ' ') and (c_idx != len(city)-1):
-				clean_city += "-"
-			elif (city[c_idx] == ' ') and (c_idx == len(city)-1):
-				continue	
-			else:
-				clean_city += city[c_idx]
-
-			c_idx = c_idx + 1 + idx_Add
-
-		# append cleaned city names to the end of the url additive
-		full_urls = []
-		for u in url_additives:
-			full_urls.append(u + clean_city)
-
-		# TODO: add support for appending numbers to the url for chain restaurants
-		numIters = 1 # the number to append to the end of the link (chain restaurants)
-
-		pageFound = False
-
-		while not(pageFound): # and (numIters <= 10):		
-			for url_to_try in full_urls:
-				pagelink = url_base + url_to_try
-			  	page = requests.get(pagelink)
-			  	tree = html.fromstring(page.content)
-
-			 	street = tree.xpath('//*[@id="wrap"]/div[3]/div/div[1]/div/div[4]/div[1]/div/div[2]/ul/span/li/strong/address/span[1]/text()')
-		        
-		       	if street == []:
-		        	street = tree.xpath('//*[@id="wrap"]/div[3]/div/div[1]/div/div[3]/div[1]/div/div[2]/ul/span/li/strong/address/span[1]/text()')
-
-		        # check to ensure correct location
-		        if street != []:
-		        	if street[0] == street_addr:
-		        		pageFound = True
-
-				price = ""
-				p = tree.xpath('//*[@id="wrap"]/div[3]/div/div[1]/div/div[2]/div[1]/div/div[2]/span[1]/span/text()')
-				if p == []:
-					price = "N/A"
-				else:
-					price = str(len(p[0]))
-
-		toAppend = business_id + "|" + name + "|" + city + "|" + state + "|" + str(latitude) + "|" + str(longitude) + "|" + str(stars) + "|" + str(review_count) + "|" + price + "|" + genres + "\n"
-		r.write(toAppend)
+            toAppend = business_id + "|" + name + "|" + city + "|" + state + "|" + str(latitude) + "|" + str(longitude) + "|" + str(stars) + "|" + str(review_count) + "|" + str(price) + "|" + genres + "|" + str(score) + "\n"
+            r.write(toAppend)
