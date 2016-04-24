@@ -84,10 +84,11 @@ with open("business.txt", "wb") as r:
             if categories == []:
                 genres = "N/A"
             else:
-                genres += categories[0].encode("utf-8")
-                for i in range(1, len(categories)):
-                    genres += " /// "
-                    genres += categories[i].encode("utf-8")
+                for i in range(0, len(categories)):
+                    if categories[i] != "Restaurants":
+                        genres += categories[i].encode("utf-8")
+                        if i != (len(categories) - 1) and categories[i+1] != "Restaurants":
+                            genres += " /// "
             
             if business_id in scores:
                 score = round(float(scores[business_id][0])/scores[business_id][1], 2)
