@@ -14,7 +14,6 @@ $("document").ready(function(){
 
         d3.csv("avgs_by_price.csv", function(input){
             for(var i in input){
-                console.log(input[i]["Average"])
                 input[i]["Name"] = input[i]["Price"];
                 dataset.push(input[i]);
             }
@@ -31,7 +30,6 @@ $("document").ready(function(){
 
         d3.csv("avg_by_genre.csv", function(input){
             for(var i in input){
-                console.log(input[i]["Average"])
                 input[i]["Name"] = input[i]["Genre"];
                 dataset.push(input[i]);
             }
@@ -76,24 +74,24 @@ $("document").ready(function(){
         var height = 800;
         var width = 500;
 
-        console.log(checked);
-
         d3.csv("avgs_by_price.csv", function(input){
             for(var i in input){
                 input[i]["Name"] = input[i]["Price"];
-                console.log(input[i]["Price"]);
                 if (checked.has(input[i]["Price"])){
                     dataset.push(input[i]);
                 }
             }
-
-            console.log(dataset);
             
            draw_grid(dataset, height, width);
         });
     }
 
     function draw_grid(dataset, height, width){
+        if(width >= 800){
+            $("#content").css("overflow-x", "scroll");
+        }else{
+            $("#content").css("overflow-x", "hidden");
+        }
         var count;
 
         $("#viz").remove();
@@ -132,16 +130,26 @@ $("document").ready(function(){
             viz.append("text")
                 .text(dataset[i]["Name"])
                 .style("display", "inline-block")
-                .attr("x", ((width-20)/dataset.length) * i + 20)
+                .attr("x", ((width-20)/dataset.length) * i + 30 + (width/dataset.length - 30)/2)
                 .attr("y", height-10)
-                .attr("font-size", "15px");
+                .attr("font-size", "12px")
+                .attr("width", ((width-20)/dataset.length))
+                .style("word-wrap", "break-word")
+                .attr("text-anchor", "middle");
 
-            viz.append("rect")
-                .attr("height", 150*parseFloat(dataset[i]["Average"]))
+            var bar = viz.append("rect")
+                .attr("height", 0)
                 .attr("width", width/dataset.length - 30)
-                .attr("x", ((width-20)/dataset.length) * i + 20)
-                .attr("y", height-50 - (150 * parseFloat(dataset[i]["Average"])))
-                .attr("fill", "black");
+                .attr("x", ((width-20)/dataset.length) * i + 30)
+                .attr("y", 0)
+                .attr("fill", "black")
+                .classed("bar", true)
+                .attr("id", "bar"+i);
+
+            var barheight = 150*parseFloat(dataset[i]["Average"]);
+            var y = height-50 - (150 * parseFloat(dataset[i]["Average"]));
+
+            d3.select("#"+"bar"+i).transition().attr("height", barheight).transition().attr("y", y);
         }
     }
 });
