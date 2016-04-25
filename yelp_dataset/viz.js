@@ -86,6 +86,10 @@ $("document").ready(function(){
     $("#combinebutton").on("click", combine_function);
     $(".category").hide();
     $(".price").hide();
+
+    var true_avg = 3.74; //Constant value
+    var redcolors = ["#fdd49e","#fc8d59","#d7301f","#7f0000"];
+    var bluecolors = ["#DCDFE4", "#79B7C1", "#7A97B7", "#294461"]
     function price_function() {
         $(".price").on("change", check_price);
         $(".category").off("change", check_cat);
@@ -353,14 +357,33 @@ $("document").ready(function(){
                 .attr("width", width/dataset.length - 30)
                 .attr("x", ((width-20)/dataset.length) * i + 30)
                 .attr("y", 0)
-                .attr("fill", "black")
+                .attr("fill", "white")
                 .classed("bar", true)
                 .attr("id", "bar"+i);
 
             var barheight = 150*parseFloat(dataset[i]["Average"]);
             var y = height-50 - (((150/800)*height) * parseFloat(dataset[i]["Average"]));
+            var color;
+            if(parseFloat(dataset[i]["Average"]) < true_avg){
+                var index = Math.ceil((true_avg - parseFloat(dataset[i]["Average"])*7)) - 1;
+                if(index < 0){
+                    index = 0;
+                }else if(index > 3){
+                    index = 3;
+                }
+                color = redcolors[index];
+            }else{
+                var index = Math.ceil((parseFloat(dataset[i]["Average"]-true_avg)*7)) - 1;
+                if(index < 0){
+                    index = 0;
+                }else if(index > 3){
+                    index = 3;
+                }
+                color = bluecolors[index];
+            }
+                
 
-            d3.select("#"+"bar"+i).transition().attr("height", barheight).transition().attr("y", y);
+            d3.select("#"+"bar"+i).transition().attr("height", barheight).transition().attr("y", y).transition().attr("fill", color);
         }
     }
 });
