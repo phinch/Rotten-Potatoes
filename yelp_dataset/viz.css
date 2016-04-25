@@ -25,6 +25,7 @@ button {
 #content{
     display: inline-block;
     width: 800px;
+    text-align: center;
 }
 
 #choices{
@@ -55,17 +56,24 @@ p{
 }
 
 .boxes{
-    width: 50%;
+    width: 49%;
     padding: 0;
+    display: inline-block;
+    vertical-align: top;
 }
 
 #cats{
     position: relative;
-    left: 150px;
     text-align: right;
 }
 
 #prices{
     position: relative;
     text-align: left;
+}
+
+#combinebutton{
+    margin-top: 10px;
+    position: relative;
+    right: 75px;
 }
