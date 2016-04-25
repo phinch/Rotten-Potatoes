@@ -10,15 +10,16 @@ $("document").ready(function(){
         $(".category").hide();
         var dataset = [];
         var height = 800;
-        var width = 500;
 
         d3.csv("avgs_by_price.csv", function(input){
             for(var i in input){
                 input[i]["Name"] = input[i]["Price"];
                 dataset.push(input[i]);
             }
+
+            width = 80*dataset.length;
             
-           draw_grid(dataset, height, width);
+            draw_grid(dataset, height, width);
         });
     }
     function cat_function() {
@@ -26,15 +27,16 @@ $("document").ready(function(){
         $(".price").hide();
         var dataset = [];
         var height = 800;
-        var width = 1600;
 
         d3.csv("avg_by_genre.csv", function(input){
             for(var i in input){
                 input[i]["Name"] = input[i]["Genre"];
                 dataset.push(input[i]);
             }
+
+            width = 80*dataset.length;
             
-           draw_grid(dataset, height, width);
+            draw_grid(dataset, height, width);
         });
     }
 
@@ -48,7 +50,6 @@ $("document").ready(function(){
 
         var dataset = [];
         var height = 800;
-        var width = 1600;
 
         d3.csv("avg_by_genre.csv", function(input){
             for(var i in input){
@@ -57,8 +58,10 @@ $("document").ready(function(){
                     dataset.push(input[i]);
                 }
             }
+
+            width = 80*dataset.length;
             
-           draw_grid(dataset, height, width);
+            draw_grid(dataset, height, width);
         });
     }
 
@@ -72,7 +75,6 @@ $("document").ready(function(){
 
         var dataset = [];
         var height = 800;
-        var width = 500;
 
         d3.csv("avgs_by_price.csv", function(input){
             for(var i in input){
@@ -81,8 +83,10 @@ $("document").ready(function(){
                     dataset.push(input[i]);
                 }
             }
+
+            width = 80*dataset.length;
             
-           draw_grid(dataset, height, width);
+            draw_grid(dataset, height, width);
         });
     }
 
@@ -147,7 +151,7 @@ $("document").ready(function(){
                 .attr("id", "bar"+i);
 
             var barheight = 150*parseFloat(dataset[i]["Average"]);
-            var y = height-50 - (150 * parseFloat(dataset[i]["Average"]));
+            var y = height-50 - (((150/800)*height) * parseFloat(dataset[i]["Average"]));
 
             d3.select("#"+"bar"+i).transition().attr("height", barheight).transition().attr("y", y);
         }
