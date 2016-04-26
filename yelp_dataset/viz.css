@@ -15,7 +15,11 @@ button {
 	width: 140px;
 	height: 50px;
 	color: white;
-	background-color: #404040;
+	background-color: #606060;
+}
+
+button:hover{
+    background-color: #404040;
 }
 
 #columns{
