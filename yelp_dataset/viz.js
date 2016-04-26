@@ -83,9 +83,10 @@ $("document").ready(function(){
     };
     $("#pricebutton").on("click", price_function);
     $("#categorybutton").on("click", cat_function);
-    $("#combinebutton").on("click", combine_function);
+    $("#combinebutton").on("click", combine_category);
     $(".category").hide();
     $(".price").hide();
+    $(".small").hide();
 
     var true_avg = 3.74; //Constant value
     var redcolors = ["#fdd49e","#fc8d59","#d7301f","#7f0000"];
@@ -93,10 +94,11 @@ $("document").ready(function(){
     function price_function() {
         $(".price").on("change", check_price);
         $(".category").off("change", check_cat);
-        $(".category").off("change", check_combo);
-        $(".price").off("change", check_combo);
+        $(".category").off("change", combo_category);
+        $(".price").off("change", combo_category);
         $(".price").slideDown();
         $(".category").slideUp();
+        $(".small").slideUp();
         var dataset = [];
         var height = 800;
 
@@ -114,10 +116,11 @@ $("document").ready(function(){
     function cat_function() {
         $(".category").on("change", check_cat);
         $(".price").off("change", check_price);
-        $(".category").off("change", check_combo);
-        $(".price").off("change", check_combo);
+        $(".category").off("change", combo_category);
+        $(".price").off("change", combo_category);
         $(".category").slideDown();
         $(".price").slideUp();
+        $(".small").slideUp();
         var dataset = [];
         var height = 800;
 
@@ -133,20 +136,23 @@ $("document").ready(function(){
         });
     }
 
-    function combine_function(){
+    function combine_category(){
         //In anticipation of future additional filters, this function will calculate the data it needs from the raw business.txt.
         //(As such, future additional metrics should be added to business.txt.)
         //This could get gross.
 
         $(".category").slideDown();
         $(".price").slideDown();
+        $(".small").slideDown();
 
         $(".category").off("change", check_cat);
         $(".price").off("change", check_price);
-        $(".category").on("change", check_combo);
-        $(".price").on("change", check_combo);
+        $(".category").on("change", combo_category);
+        $(".price").on("change", combo_category);
+        $("#byprice").on("click", combine_price);
+        $("#bycategory").on("click", combo_category);
 
-        check_combo();
+        combo_category();
     }
 
     function check_cat(){
@@ -199,7 +205,7 @@ $("document").ready(function(){
         });
     }
 
-    function check_combo(){
+    function combo_category(){
         //For now, we're combining price and genre.
         // i.e. By default, the genres will be displayed, filtered by price. (Ability to switch: TODO)
         //First, we'll find which cross-metrics we'll need by checking which checkboxes are checked (lol)
@@ -301,6 +307,11 @@ $("document").ready(function(){
         });
     }
 
+    function combine_price(){
+        //TODO: Code that shows price on bars with genre
+        return null
+    }
+
     function draw_grid(dataset, height, width){
         if(width >= 800){
             $("#content").css("overflow-x", "scroll");
@@ -328,7 +339,7 @@ $("document").ready(function(){
         d3.select("#viz").append("line")
             .attr("x1", 20)
             .attr("y1", height-50)
-            .attr("x2", width - 20)
+            .attr("x2", width)
             .attr("y2", height-50)
             .attr("stroke-width", 2)
             .attr("stroke", "black");
@@ -336,7 +347,7 @@ $("document").ready(function(){
         d3.select("#viz").append("line")
             .attr("x1", 20)
             .attr("y1", height - 50 - 150/800*height*true_avg)
-            .attr("x2", width - 20)
+            .attr("x2", width)
             .attr("y2", height - 50 - 150/800*height*true_avg)
             .attr("stroke-width", 2)
             .attr("stroke", "#cccccc");
