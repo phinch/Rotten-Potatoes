@@ -333,6 +333,14 @@ $("document").ready(function(){
             .attr("stroke-width", 2)
             .attr("stroke", "black");
 
+        d3.select("#viz").append("line")
+            .attr("x1", 20)
+            .attr("y1", height - 50 - 150/800*height*true_avg)
+            .attr("x2", width - 20)
+            .attr("y2", height - 50 - 150/800*height*true_avg)
+            .attr("stroke-width", 2)
+            .attr("stroke", "#cccccc");
+
         for(var i = 1; i <= 5; i++){
             viz.append("text")
                 .text(i)
@@ -365,7 +373,7 @@ $("document").ready(function(){
             var y = height-50 - (((150/800)*height) * parseFloat(dataset[i]["Average"]));
             var color;
             if(parseFloat(dataset[i]["Average"]) < true_avg){
-                var index = Math.ceil((true_avg - parseFloat(dataset[i]["Average"])*7)) - 1;
+                var index = Math.ceil((true_avg - parseFloat(dataset[i]["Average"]))*7) - 1;
                 if(index < 0){
                     index = 0;
                 }else if(index > 3){
