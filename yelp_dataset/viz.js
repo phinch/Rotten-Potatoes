@@ -394,7 +394,7 @@ $("document").ready(function(){
                         if(input[i]["avg score"] == "N/A"){
                             continue;
                         }
-                        if(pricehash[pricenum] == null){
+                        if(pricehash[price] == null){
                             pricehash[price] = [price, score, count];
                         }else{
                             pricehash[price][1] += score;
