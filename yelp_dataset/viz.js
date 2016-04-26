@@ -248,7 +248,6 @@ $("document").ready(function(){
 
 
                 var dsv = d3.dsv("|", "text/plain");
-                console.log(pricedata, genredata);
                 dsv("business.txt", function(input){
                     var genrehash = [];
                     for(var i in input){
@@ -300,7 +299,6 @@ $("document").ready(function(){
                             alldata.push({"Name": genredata[g], "Average": average});
                         }
                     }
-                    console.log(alldata);
                     draw_grid(alldata, height, width);
                 });
             });
@@ -309,7 +307,114 @@ $("document").ready(function(){
 
     function combine_price(){
         //TODO: Code that shows price on bars with genre
-        return null
+        $(".category").off("change", check_cat);
+        $(".price").off("change", check_price);
+        $(".category").on("change", combo_price);
+        $(".price").on("change", combo_price);
+        $("#byprice").on("click", combine_price);
+        $("#bycategory").on("click", combine_category);
+
+        combo_price();
+    }
+
+    function combo_price(){
+        //First, we'll find which cross-metrics we'll need by checking which checkboxes are checked (lol)
+        var pricedata = [];
+        var genredata = [];
+        var alldata = [];
+        var checked = new Set();
+        var height = 800;
+
+        $(".category").each(function(index, value){
+            if(value.children[0].checked){
+                checked.add(value.children[0].value);
+            }
+        });
+
+        $(".price").each(function(index, value){
+            if(value.children[0].checked){
+                checked.add(value.children[0].value);
+            }
+        });
+
+        d3.csv("avgs_by_price.csv", function(input){
+            for(var i in input){
+                input[i]["Name"] = input[i]["Price"];
+                if (checked.has(input[i]["Price"])){
+                    pricedata.push(input[i]["Price"]);
+                }
+            }
+
+            width = 80*pricedata.length;
+            
+            d3.csv("avg_by_genre.csv", function(input){
+                for(var i in input){
+                    input[i]["Name"] = input[i]["Genre"];
+                    if (checked.has(input[i]["Genre"])){
+                        genredata.push(input[i]["Genre"]);
+                    }
+                }
+
+                console.log(pricedata, genredata);
+
+                var dsv = d3.dsv("|", "text/plain");
+                console.log(pricedata, genredata);
+                dsv("business.txt", function(input){
+                    var pricehash = [];
+                    for(var i in input){
+                        //data needs to fit in both datasets
+                        var pricenum = input[i]["price"];
+                        var price = "";
+                        for(var j = 0; j < parseInt(pricenum); j++){
+                            price += "$";
+                        }
+                        if(pricedata.indexOf(price) == -1 || pricenum == "N/A"){
+                            continue;
+                        }
+                        var categories = input[i]["genres"].split(" /// ");
+                        var genres = [];
+                        for(var j = 0; j < categories.length; j++){
+                            var map = categorymap[categories[j]];
+                            if(map != null){
+                                for(var k = 0; k < map.length; k++){
+                                    if(genres.indexOf(map[k]) == -1 && genredata.indexOf(map[k]) != -1){
+                                        genres.push(map[k]);
+                                    }
+                                }
+                            }
+                        }
+
+                        if(genres.length == 0){
+                            continue;
+                        }
+
+                        var count = parseInt(input[i]["review_count"]);
+                        var score = parseFloat(input[i]["avg score"])*count;
+
+                        if(input[i]["avg score"] == "N/A"){
+                            continue;
+                        }
+                        if(pricehash[pricenum] == null){
+                            pricehash[price] = [price, score, count];
+                        }else{
+                            pricehash[price][1] += score;
+                            pricehash[price][2] += count;
+                        }
+                    }
+                    console.log(pricehash);
+                    //Data needs to be in form [Name: xx, Average: xx], where name is the genre in this case.
+                    for(var p in pricedata){
+                        console.log(pricehash[pricedata[p]])
+                        if(pricehash[pricedata[p]] != null){
+                            var average = (pricehash[pricedata[p]][1]/pricehash[pricedata[p]][2]).toString();
+                            alldata.push({"Name": pricehash[pricedata[p]][0], "Average": average});
+                        }
+                    }
+                    console.log(alldata);
+                    draw_grid(alldata, height, width);
+                });
+            });
+        });
     }
 
     function draw_grid(dataset, height, width){
