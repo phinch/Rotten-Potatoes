@@ -9,9 +9,9 @@ with open('business.txt') as f:
 	for line in f:
 		cpts = line.split("|")
 		if cpts[8] in price:
-			price[cpts[8]].append(cpts[10])
+			price[cpts[8]].append((cpts[7],cpts[10]))
 		else:
-			price[cpts[8]] = [cpts[10]]
+			price[cpts[8]] = [(cpts[7],cpts[10])]
 
 	avgs = dict()
 
@@ -19,10 +19,9 @@ with open('business.txt') as f:
 		sum_scores = 0.0
 		num_scores = 0
 		for elt in price[key]:
-			if elt != 'N/A\n':
-				num_scores += 1
-				sum_scores += float(elt)
-		print num_scores
+			if elt[1] != 'N/A\n':
+				num_scores += int(elt[0])
+				sum_scores += float(elt[0])*float(elt[1])
 		avgs[key] = sum_scores/float(num_scores)
 
 	for key in avgs:
