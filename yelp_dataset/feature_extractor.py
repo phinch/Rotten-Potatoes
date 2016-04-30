@@ -33,12 +33,8 @@ import csv
 # }
 
 # attr = {}
-count1 = 0
-count2 = 0
-count3 = 0
-count4 = 0
 #music = {}
-with open("attributes.txt", "wb") as r:
+with open("attributes_one-two.txt", "wb") as r:
     r.write("business_id|stars|takeout|drivethru|outdoorseating|caters|noise|p_garage|p_street|p_validated|p_lot|p_valet|delivery|price|attire|tv|gf_dessert|gf_latenight|gf_lunch|gf_dinner|gf_breakfast|gf_brunch|reservations|a_romantic|a_intimate|a_classy|a_hipster|a_divey|a_touristy|a_trendy|a_upscale|a_casual|waiter|creditcards|kids|groups|alcohol|wheelchair|wifi|counter|dogs|dancing|coat|smoking|happyhour|m_dj|m_background|m_jukebox|m_live|m_video|m_karaoke|byob|corkage|byobcorkage|tfhours|ages|d_dairyfree|d_glutenfree|d_vegan|d_kosher|d_halal|d_soyfree|d_vegetarian|appt|insurance\n")
 
     with open('restaurants.json') as f:
@@ -114,16 +110,13 @@ with open("attributes.txt", "wb") as r:
                 delivery = na
             if 'Price Range' in attributes:
                 price = attributes['Price Range']
-                if price == 1:
-                    count1 += 1
-                elif price == 2:
-                    count2 += 1
-                elif price == 3:
-                    count3 += 1
-                else:
-                    count4 += 1
+                if price == 3:
+                    cnt = True
+                if price == 4:
+                    cnt = True
             else:
                 price = na
+                cnt = True
             if 'Attire' in attributes:
                 attire = attributes['Attire']
             else:
