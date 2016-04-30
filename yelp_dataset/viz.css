@@ -4,7 +4,7 @@
 }
 
 body{
-    min-width: 1500px;
+    min-width: 2500px;
 }
 
 button {
@@ -31,18 +31,14 @@ button:hover{
     margin-top: 7px;
 }
 
-#columns{
-    text-align: center;
-}
-
 #content{
     display: inline-block;
-    width: 800px;
     text-align: center;
 }
 
 #choices{
-    margin-left: 200px;
+    margin-left: 30px;
+    margin-right: 30px;
     vertical-align: top;
     display: inline-block;
     width: 300px;
