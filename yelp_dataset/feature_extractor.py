@@ -33,7 +33,10 @@ import csv
 # }
 
 # attr = {}
-count = 0
+count1 = 0
+count2 = 0
+count3 = 0
+count4 = 0
 #music = {}
 with open("attributes.txt", "wb") as r:
     r.write("business_id|stars|takeout|drivethru|outdoorseating|caters|noise|p_garage|p_street|p_validated|p_lot|p_valet|delivery|price|attire|tv|gf_dessert|gf_latenight|gf_lunch|gf_dinner|gf_breakfast|gf_brunch|reservations|a_romantic|a_intimate|a_classy|a_hipster|a_divey|a_touristy|a_trendy|a_upscale|a_casual|waiter|creditcards|kids|groups|alcohol|wheelchair|wifi|counter|dogs|dancing|coat|smoking|happyhour|m_dj|m_background|m_jukebox|m_live|m_video|m_karaoke|byob|corkage|byobcorkage|tfhours|ages|d_dairyfree|d_glutenfree|d_vegan|d_kosher|d_halal|d_soyfree|d_vegetarian|appt|insurance\n")
@@ -111,6 +114,14 @@ with open("attributes.txt", "wb") as r:
                 delivery = na
             if 'Price Range' in attributes:
                 price = attributes['Price Range']
+                if price == 1:
+                    count1 += 1
+                elif price == 2:
+                    count2 += 1
+                elif price == 3:
+                    count3 += 1
+                else:
+                    count4 += 1
             else:
                 price = na
             if 'Attire' in attributes:
@@ -168,7 +179,7 @@ with open("attributes.txt", "wb") as r:
                     a_intimate = na
                 if 'classy' in attributes['Ambience']:
                     a_classy = attributes['Ambience']['classy']
-                    count += 1
+                    # count += 1
                 else:
                     cnt = True
                     a_classy = na
@@ -360,7 +371,10 @@ with open("attributes.txt", "wb") as r:
             if not cnt:
                 toAppend = business_id + "|" + str(stars) + "|" + str(takeout) + "|" + str(drivethru) + "|" + str(outdoorseating) + "|" + str(caters) + "|" + str(noise) + "|" + str(p_garage) + "|" + str(p_street) + "|" + str(p_validated) + "|" + str(p_lot) + "|" + str(p_valet) + "|" + str(delivery) + "|" + str(price) + "|" + str(attire) + "|" + str(tv) + "|" + str(gf_dessert) + "|" + str(gf_latenight) + "|" + str(gf_lunch) + "|" + str(gf_dinner) + "|" + str(gf_breakfast) + "|" + str(gf_brunch) + "|" + str(reservations) + "|" + str(a_romantic) + "|" + str(a_intimate) + "|" + str(a_classy) + "|" + str(a_hipster) + "|" + str(a_divey) + "|" + str(a_touristy) + "|" + str(a_trendy) + "|" + str(a_upscale) + "|" + str(a_casual) + "|" + str(waiter) + "|" + str(creditcards) + "|" + str(kids) + "|" + str(groups) + "|" + str(alcohol) + "|" + str(wheelchair) + "|" + str(wifi) + "|" + str(counter) + "|" + str(dogs) + "|" + str(dancing) + "|" + str(coat) + "|" + str(smoking) + "|" + str(happyhour) + "|" + str(m_dj) + "|" + str(m_background) + "|" + str(m_jukebox) + "|" + str(m_live) + "|" + str(m_video) + "|" + str(m_karaoke) + "|" + str(byob) + "|" + str(corkage) + "|" + str(byobcorkage) + "|" + str(tfhours) + "|" + str(ages) + "|" + str(d_dairyfree) + "|" + str(d_glutenfree) + "|" + str(d_vegan) + "|" + str(d_kosher) + "|" + str(d_halal) + "|" + str(d_soyfree) + "|" + str(d_vegetarian) + "|" + str(appt) + "|" + str(insurance) + "\n"
                 r.write(toAppend)
-    print count
+    print count1
+    print count2
+    print count3
+    print count4
     # "attributes": 
     # {"Take-out": true, 
     #  "Drive-Thru": false, 
