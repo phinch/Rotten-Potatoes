@@ -15,8 +15,6 @@ def extractData(datapath):
 		cheapY = []
 		expX = []
 		expY = []
-		c = 0
-		e = 0
 		for row in reader:
 			if row[price_ind] == 'n/a':
 				continue
@@ -84,23 +82,17 @@ def main():
 	
 	num_iter = 100
 	accuracies = []
-	subsetSize = num_exp/2
 	
 	# Undersample and obtain average score num_iter times, and then average together the average scores
-	print 'Undersampling... (will sample/train/test %d cheap and %d expensive %d times)' % (subsetSize*2, subsetSize*2, num_iter)
+	print 'Undersampling... (will sample/train/test %d cheap and %d expensive %d times)' % (num_exp, num_exp, num_iter)
 	sys.stdout.flush()
 	for i in range(num_iter):
-		cheapXY = random.sample(zip(cheapX, cheapY), subsetSize)
-		expXY = random.sample(zip(expX, expY), subsetSize)
+		cheapXY = random.sample(zip(cheapX, cheapY), num_exp)
 		cheapTrainX = [i for i,j in cheapXY]
 		cheapTrainY = [j for i,j in cheapXY]
-		expTrainX = [i for i,j in expXY]
-		expTrainY = [j for i,j in expXY]
-		assert len(cheapTrainX) == len(cheapTrainY) == len(expTrainX) == len(expTrainY)
-		X = cheapTrainX + expTrainX
-		Y = cheapTrainY + expTrainY
+		X = cheapTrainX + expX
+		Y = cheapTrainY + expY
 		X, Y = shuffleListPairs(X, Y)
-		assert len(X) == len(Y) == subsetSize*2
 		scores = cross_validation.cross_val_score(clf,X,Y,cv=10)
 		accuracies.append(scores.mean())
 		
