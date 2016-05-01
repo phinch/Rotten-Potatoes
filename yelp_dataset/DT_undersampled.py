@@ -72,9 +72,11 @@ def extractXY(XY):
 	return X, Y
 	
 def classifyWithUndersampling(clf, smallX, smallY, bigX, bigY):
-	num_iter = 100
-	accuracies = []
 	len_small = len(smallY)
+	len_big = len(bigY)
+	iter_weight = 5
+	num_iter = int(float(len_big)/len_small)*iter_weight # scale num_iter with big/small ratio
+	accuracies = []
 	# Undersample and obtain average score num_iter times, and then average together the average scores
 	print 'Undersampling... (will sample/train/test %d cheap and %d expensive %d times)' % (len_small, len_small, num_iter)
 	sys.stdout.flush()
