@@ -50,10 +50,10 @@ def extractData(datapath):
 			Y.append(price)
 	return X,Y
 	
-def trainDecisionTree(X,Y,max_depth=None):
+def trainDecisionTree(X,Y,depth=None):
 	num_data = len(Y)
 	assert len(X) == num_data
-	clf = tree.DecisionTreeClassifier()
+	clf = tree.DecisionTreeClassifier(max_depth = depth)
 	clf = clf.fit(X,Y)
 	count = 0
 	for i in range(num_data):
