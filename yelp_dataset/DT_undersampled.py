@@ -3,6 +3,7 @@ import random
 import sys
 import numpy as np
 from sklearn import tree
+from sklearn import ensemble
 from sklearn import cross_validation
 
 def extractData(datapath):
@@ -81,7 +82,7 @@ def getUndersampledSets(smallX, smallY, bigX, bigY):
 def classifyWithUndersampling(clf, smallX, smallY, bigX, bigY):
 	len_small = len(smallY)
 	len_big = len(bigY)
-	iter_weight = 5
+	iter_weight = 3
 	num_iter = int(float(len_big) / len_small) * iter_weight  # scale num_iter with big/small ratio
 	accuracies = []
 	# Undersample and obtain average score num_iter times, and then average together the average scores
@@ -102,11 +103,12 @@ def generateDotFileWithUndersampling(clf, smallX, smallY, bigX, bigY):
 		tree.export_graphviz(clf, out_file=f)
 	print 'Generated dot file'
 
-def main():
+def main():  # TODO: parse user input to determine which classifier to run
 	cheapX, cheapY, expX, expY = extractData('attributes_all.txt')
 	print 'Num cheap restaurants:', len(cheapY)
 	print 'Num expensive restaurants:', len(expY)
-	clf = tree.DecisionTreeClassifier(max_depth=3)
+	#clf = tree.DecisionTreeClassifier(max_depth=3)
+	clf = ensemble.RandomForestClassifier(max_depth=6)
 	classifyWithUndersampling(clf, expX, expY, cheapX, cheapY)
 	# generateDotFileWithUndersampling(clf, expX, expY, cheapX, cheapY)
 
