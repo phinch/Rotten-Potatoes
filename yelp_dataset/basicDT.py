@@ -1,5 +1,6 @@
 import csv
 from sklearn import tree
+from sklearn.externals.six import StringIO
 
 def extractData(datapath):
 	with open(datapath, 'rb') as fid:
@@ -60,10 +61,14 @@ def trainDecisionTree(X,Y):
 		if predict == Y[i]:
 			count += 1
 	acc = float(count)/num_data
-	return acc
+	return clf, acc
 
+def generateDotFile(clf):
+	with open('basicDT.dot', 'w') as f:
+		f = tree.export_graphviz(clf, out_file=f)
 		
 if __name__ == '__main__':
 	X,Y = extractData('attributes_all.txt')
-	acc = trainDecisionTree(X,Y)
+	clf, acc = trainDecisionTree(X,Y)
+	generateDotFile(clf)
 	print 'acc:', acc
