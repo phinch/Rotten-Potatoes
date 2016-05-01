@@ -62,12 +62,6 @@ def extractData(datapath):
 	assert len(cheapX) == len(cheapY)
 	assert len(expX) == len(expY)
 	return cheapX, cheapY, expX, expY
-
-
-def generateDotFile(clf,X,Y):
-	clf = clf.fit(X,Y)
-	with open('basicDT.dot', 'w') as f:
-		f = tree.export_graphviz(clf, out_file=f)
 		
 def shuffleListPairs(X, Y):
 	XY = zip(X, Y)
