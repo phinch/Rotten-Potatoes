@@ -64,6 +64,9 @@ def extractData(datapath):
 def shuffleListPairs(X, Y):
 	XY = zip(X, Y)
 	random.shuffle(XY)
+	return extractXY(XY)
+	
+def extractXY(XY):
 	X = [i for i,j in XY]
 	Y = [j for i,j in XY]
 	return X, Y
@@ -75,10 +78,9 @@ def classifyWithUndersampling(clf, smallX, smallY, bigX, bigY):
 	# Undersample and obtain average score num_iter times, and then average together the average scores
 	print 'Undersampling... (will sample/train/test %d cheap and %d expensive %d times)' % (len_small, len_small, num_iter)
 	sys.stdout.flush()
-	for i in range(num_iter):
-		bigXY = random.sample(zip(bigX, bigY), len_small)
-		bigTrainX = [i for i,j in bigXY]
-		bigTrainY = [j for i,j in bigXY]
+	for _ in range(num_iter):
+		bigTrainXY = random.sample(zip(bigX, bigY), len_small)
+		bigTrainX, bigTrainY = extractXY(bigTrainXY)
 		X = bigTrainX + smallX
 		Y = bigTrainY + smallY
 		X, Y = shuffleListPairs(X, Y)
