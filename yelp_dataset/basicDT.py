@@ -59,9 +59,11 @@ def trainDecisionTree(X,Y):
 		predict = clf.predict([X[i]])[0]
 		if predict == Y[i]:
 			count += 1
-	print 'acc:', float(count)/num_data
+	acc = float(count)/num_data
+	return acc
 
 		
 if __name__ == '__main__':
 	X,Y = extractData('attributes_all.txt')
-	trainDecisionTree(X,Y)
+	acc = trainDecisionTree(X,Y)
+	print 'acc:', acc
