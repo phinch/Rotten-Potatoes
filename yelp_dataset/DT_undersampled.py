@@ -108,7 +108,7 @@ def main():
 	print 'Num expensive restaurants:', len(expY)
 	clf = tree.DecisionTreeClassifier(max_depth=3)
 	classifyWithUndersampling(clf, expX, expY, cheapX, cheapY)
-	generateDotFileWithUndersampling(clf, expX, expY, cheapX, cheapY)
+	# generateDotFileWithUndersampling(clf, expX, expY, cheapX, cheapY)
 
 if __name__ == '__main__':
 	main()
