@@ -53,7 +53,7 @@ def extractData(datapath):
 
 def generateDotFile(clf,X,Y):
 	clf = clf.fit(X,Y)
-	with open('basicDT.dot', 'w') as f:
+	with open('DT_basic.dot', 'w') as f:
 		f = tree.export_graphviz(clf, out_file=f)
 		
 if __name__ == '__main__':
