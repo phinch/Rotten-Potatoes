@@ -71,6 +71,13 @@ def extractXY(XY):
 	Y = [j for i,j in XY]
 	return X, Y
 	
+def getUndersampledSets(smallX, smallY, bigX, bigY):
+	bigTrainXY = random.sample(zip(bigX, bigY), len(smallY))
+	bigTrainX, bigTrainY = extractXY(bigTrainXY)
+	X = bigTrainX + smallX
+	Y = bigTrainY + smallY
+	return shuffleListPairs(X, Y)
+	
 def classifyWithUndersampling(clf, smallX, smallY, bigX, bigY):
 	len_small = len(smallY)
 	len_big = len(bigY)
@@ -81,23 +88,26 @@ def classifyWithUndersampling(clf, smallX, smallY, bigX, bigY):
 	print 'Undersampling... (will sample/train/test %d cheap and %d expensive %d times)' % (len_small, len_small, num_iter)
 	sys.stdout.flush()
 	for _ in range(num_iter):
-		bigTrainXY = random.sample(zip(bigX, bigY), len_small)
-		bigTrainX, bigTrainY = extractXY(bigTrainXY)
-		X = bigTrainX + smallX
-		Y = bigTrainY + smallY
-		X, Y = shuffleListPairs(X, Y)
+		X, Y = getUndersampledSets(smallX, smallY, bigX, bigY)
 		scores = cross_validation.cross_val_score(clf,X,Y,cv=10)
 		accuracies.append(scores.mean())
 	accuracies = np.array(accuracies)
 	print 'Finished!'
 	print 'Accuracy: %0.2f%% (+/- %0.2f%%)' % (accuracies.mean()*100, accuracies.std()*2*100)
 
+def generateDotFileWithUndersampling(clf, smallX, smallY, bigX, bigY):
+	X, Y = getUndersampledSets(smallX, smallY, bigX, bigY)
+	clf = clf.fit(X, Y)
+	with open('DT_undersampled.dot', 'w') as f:
+		f = tree.export_graphviz(clf, out_file=f)
+	
 def main():
 	cheapX, cheapY, expX, expY = extractData('attributes_all.txt')
 	print 'Num cheap restaurants:', len(cheapY)
 	print 'Num expensive restaurants:', len(expY)
 	clf = tree.DecisionTreeClassifier(max_depth = 3)
 	classifyWithUndersampling(clf, expX, expY, cheapX, cheapY)
+	generateDotFileWithUndersampling(clf, expX, expY, cheapX, cheapY)
 
 		
 if __name__ == '__main__':
