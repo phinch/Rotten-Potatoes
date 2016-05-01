@@ -1,6 +1,7 @@
 import csv
 import random
 import sys
+import argparse
 import numpy as np
 from sklearn import tree
 from sklearn import ensemble
@@ -102,15 +103,26 @@ def generateDotFileWithUndersampling(clf, smallX, smallY, bigX, bigY):
 	with open('DT_undersampled.dot', 'w') as f:
 		tree.export_graphviz(clf, out_file=f)
 	print 'Generated dot file'
+	
+def parseArgs():
+	parser = argparse.ArgumentParser()
+	parser.add_argument('-classifier', required=True, help='dt or rf')
+	opts = parser.parse_args()
+	classifier = opts.classifier
+	if classifier not in ['dt', 'rf']:
+		print 'Invalid classifier.'
+		sys.exit(0)
+	return classifier
 
 def main():  # TODO: parse user input to determine which classifier to run
+	classifier = parseArgs()
 	cheapX, cheapY, expX, expY = extractData('attributes_all.txt')
 	print 'Num cheap restaurants:', len(cheapY)
 	print 'Num expensive restaurants:', len(expY)
-	#clf = tree.DecisionTreeClassifier(max_depth=3)
-	clf = ensemble.RandomForestClassifier(max_depth=6)
+	clf = tree.DecisionTreeClassifier(max_depth=3)
+	if classifier == 'rf':
+		clf = ensemble.RandomForestClassifier(max_depth=6)
 	classifyWithUndersampling(clf, expX, expY, cheapX, cheapY)
-	# generateDotFileWithUndersampling(clf, expX, expY, cheapX, cheapY)
 
 if __name__ == '__main__':
 	main()
