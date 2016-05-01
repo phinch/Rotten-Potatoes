@@ -86,3 +86,16 @@ p{
     position: relative;
     right: 75px;
 }
+
+.tooltip{
+    background: #eeeeee;
+    position: absolute;
+    border-radius: 15%;
+    width: 85px;
+    font-size: 12px;
+}
+
+.tooltext{
+    margin-left: 2px;
+    text-align: left;
+}
