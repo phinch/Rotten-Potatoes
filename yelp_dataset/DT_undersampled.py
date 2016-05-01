@@ -110,30 +110,12 @@ def main():
 		assert len(X) == len(Y) == subsetSize*2
 		scores = cross_validation.cross_val_score(clf,X,Y,cv=10)
 		accuracies.append(scores.mean())
-	
+		
 	accuracies = np.array(accuracies)
+	
 	print 'Finished!'
 	print 'Accuracy: %0.2f%% (+/- %0.2f%%)' % (accuracies.mean()*100, accuracies.std()*2*100)
-		
-		
-	
-def chunks(l, n):
-	for i in xrange(0, len(l), n):
-		yield l[i:i+n]
-	
-	# X,Y = extractData('attributes_all.txt') # TODO: undersample cheap restaurants
-	# clf = tree.DecisionTreeClassifier(max_depth = 3)
-	# scores = cross_validation.cross_val_score(clf,X,Y,cv=10)
-	# num_restaurants = len(Y)
-	# num_expensive = len([i for i in Y if i > 2])
-	# num_cheap = len([i for i in Y if i < 3])
-	# print 'Num restaurants:', num_restaurants
-	# print 'Num expensive:', num_expensive
-	# print 'Num cheap:', num_cheap
-	# print 'Expensive to cheap ratio: %0.2f%%' % (float(num_expensive)/num_restaurants*100)
-	# print 'Accuracy: %0.2f%% (+/- %0.2f%%)' % (scores.mean()*100, scores.std()*2*100)
+
 		
 if __name__ == '__main__':
 	main()
-	#a = range(10)
-	#print list(chunks(a,len(a)/5))
