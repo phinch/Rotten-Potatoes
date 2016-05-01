@@ -100,6 +100,7 @@ def generateDotFileWithUndersampling(clf, smallX, smallY, bigX, bigY):
 	clf = clf.fit(X, Y)
 	with open('DT_undersampled.dot', 'w') as f:
 		f = tree.export_graphviz(clf, out_file=f)
+	print 'Generated dot file'
 	
 def main():
 	cheapX, cheapY, expX, expY = extractData('attributes_all.txt')
