@@ -94,9 +94,9 @@ def classifyWithUndersampling(clf, smallX, smallY, bigX, bigY):
 
 def main():
 	cheapX, cheapY, expX, expY = extractData('attributes_all.txt')
-	clf = tree.DecisionTreeClassifier(max_depth = 3)
 	print 'Num cheap restaurants:', len(cheapY)
 	print 'Num expensive restaurants:', len(expY)
+	clf = tree.DecisionTreeClassifier(max_depth = 3)
 	classifyWithUndersampling(clf, expX, expY, cheapX, cheapY)
 
 		
