@@ -1,6 +1,6 @@
 import csv
 from sklearn import tree
-from sklearn.externals.six import StringIO
+from sklearn import cross_validation
 
 def extractData(datapath):
 	with open(datapath, 'rb') as fid:
@@ -49,26 +49,16 @@ def extractData(datapath):
 			X.append(feat)
 			Y.append(price)
 	return X,Y
-	
-def trainDecisionTree(X,Y,depth=None):
-	num_data = len(Y)
-	assert len(X) == num_data
-	clf = tree.DecisionTreeClassifier(max_depth = depth)
-	clf = clf.fit(X,Y)
-	count = 0
-	for i in range(num_data):
-		predict = clf.predict([X[i]])[0]
-		if predict == Y[i]:
-			count += 1
-	acc = float(count)/num_data
-	return clf, acc
 
-def generateDotFile(clf):
+
+def generateDotFile(clf,X,Y):
+	clf = clf.fit(X,Y)
 	with open('basicDT.dot', 'w') as f:
 		f = tree.export_graphviz(clf, out_file=f)
 		
 if __name__ == '__main__':
 	X,Y = extractData('attributes_all.txt')
-	clf, acc = trainDecisionTree(X,Y,3)
-	generateDotFile(clf)
-	print 'acc:', acc
+	assert len(X) == len(Y)
+	clf = tree.DecisionTreeClassifier(max_depth = 3)
+	scores = cross_validation.cross_val_score(clf,X,Y,cv=10)
+	print 'Accuracy: %0.2f (+/- %0.2f)' % (scores.mean(), scores.std()*2)
