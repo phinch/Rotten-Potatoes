@@ -418,14 +418,13 @@ $("document").ready(function(){
     }
 
     function draw_grid(dataset, height, width){
-        if(width >= 800){
-            $("#content").css("overflow-x", "scroll");
-        }else{
-            $("#content").css("overflow-x", "hidden");
-        }
         var count;
 
         $("#viz").remove();
+        $(".tooltip").remove();
+        $(".bar").off("mousemove");
+        $(".bar").off("mouseleave");
+        $(".tooltip").off("mousemove");
 
         //Draw the axes
         var viz = d3.select("#content").append("svg")
@@ -457,7 +456,7 @@ $("document").ready(function(){
             .attr("stroke-width", 2)
             .attr("stroke", "#cccccc");
 
-        for(var i = 1; i <= 5; i++){
+        for(var i = 1; i <= 4; i++){
             viz.append("text")
                 .text(i)
                 .attr("x", 5)
@@ -483,7 +482,7 @@ $("document").ready(function(){
                 .attr("y", 0)
                 .attr("fill", "white")
                 .classed("bar", true)
-                .attr("id", "bar"+i);
+                .attr("id", "bar"+i)
 
             var barheight = 150*parseFloat(dataset[i]["Average"]);
             var y = height-50 - (((150/800)*height) * parseFloat(dataset[i]["Average"]));
@@ -509,5 +508,28 @@ $("document").ready(function(){
 
             d3.select("#"+"bar"+i).transition().attr("height", barheight).transition().attr("y", y).transition().attr("fill", color);
         }
+
+        for(var i = 0; i < dataset.length; i++){
+            var tooltip = d3.select("#content").append("div")
+                .attr("id", "bar"+i+"tool")
+                .style("opacity", 0)
+                .html("<p class = 'tooltext'>"+dataset[i]["Name"] + ": "+ (Math.round(dataset[i]["Average"] * 100)/100)+"</p>")
+                .style("left", (((width-20)/dataset.length) * i + width/dataset.length + 380) + "px")
+                .classed("tooltip", true);
+        }
+
+        $(".bar").on("mousemove", function(event){
+            var id = event.target.id;
+            d3.select("#"+id+"tool")
+                .transition().style("top", (event.pageY - 10)+ "px").duration(3)
+                .transition().style("opacity", 1).duration(40);
+        });
+
+        $(".bar").on("mouseleave", function(event){
+            var id = event.target.id;
+            d3.select("#"+id+"tool")
+                .transition().style("opacity", 0)
+                .transition().attr("y", 0);
+        });
     }
 });
