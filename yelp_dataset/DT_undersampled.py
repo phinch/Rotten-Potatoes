@@ -70,9 +70,6 @@ def shuffleListPairs(X, Y):
 		
 def main():
 	cheapX, cheapY, expX, expY = extractData('attributes_all.txt')
-	# shuffle list pairs
-	cheapX, cheapY = shuffleListPairs(cheapX, cheapY)
-	expX, expY = shuffleListPairs(expX, expY)
 	# create DT classifier
 	clf = tree.DecisionTreeClassifier(max_depth = 3)
 	num_cheap = len(cheapY)
