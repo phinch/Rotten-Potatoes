@@ -50,7 +50,7 @@ def extractData(datapath):
 			Y.append(price)
 	return X,Y
 	
-def trainDecisionTree(X,Y):
+def trainDecisionTree(X,Y,max_depth=None):
 	num_data = len(Y)
 	assert len(X) == num_data
 	clf = tree.DecisionTreeClassifier()
@@ -69,6 +69,6 @@ def generateDotFile(clf):
 		
 if __name__ == '__main__':
 	X,Y = extractData('attributes_all.txt')
-	clf, acc = trainDecisionTree(X,Y)
+	clf, acc = trainDecisionTree(X,Y,3)
 	generateDotFile(clf)
 	print 'acc:', acc
