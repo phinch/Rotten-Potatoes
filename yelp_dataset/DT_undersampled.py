@@ -81,7 +81,6 @@ def main():
 	num_exp = len(expY)
 	print 'Num cheap restaurants:', num_cheap
 	print 'Num expensive restaurants:', num_exp
-	sys.stdout.flush()
 	
 	num_iter = 100
 	accuracies = []
