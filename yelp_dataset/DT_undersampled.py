@@ -67,36 +67,33 @@ def shuffleListPairs(X, Y):
 	X = [i for i,j in XY]
 	Y = [j for i,j in XY]
 	return X, Y
-		
-def main():
-	cheapX, cheapY, expX, expY = extractData('attributes_all.txt')
-	# create DT classifier
-	clf = tree.DecisionTreeClassifier(max_depth = 3)
-	num_cheap = len(cheapY)
-	num_exp = len(expY)
-	print 'Num cheap restaurants:', num_cheap
-	print 'Num expensive restaurants:', num_exp
 	
+def classifyWithUndersampling(clf, smallX, smallY, bigX, bigY):
 	num_iter = 100
 	accuracies = []
-	
+	len_small = len(smallY)
 	# Undersample and obtain average score num_iter times, and then average together the average scores
-	print 'Undersampling... (will sample/train/test %d cheap and %d expensive %d times)' % (num_exp, num_exp, num_iter)
+	print 'Undersampling... (will sample/train/test %d cheap and %d expensive %d times)' % (len_small, len_small, num_iter)
 	sys.stdout.flush()
 	for i in range(num_iter):
-		cheapXY = random.sample(zip(cheapX, cheapY), num_exp)
-		cheapTrainX = [i for i,j in cheapXY]
-		cheapTrainY = [j for i,j in cheapXY]
-		X = cheapTrainX + expX
-		Y = cheapTrainY + expY
+		bigXY = random.sample(zip(bigX, bigY), len_small)
+		bigTrainX = [i for i,j in bigXY]
+		bigTrainY = [j for i,j in bigXY]
+		X = bigTrainX + smallX
+		Y = bigTrainY + smallY
 		X, Y = shuffleListPairs(X, Y)
 		scores = cross_validation.cross_val_score(clf,X,Y,cv=10)
 		accuracies.append(scores.mean())
-		
 	accuracies = np.array(accuracies)
-	
 	print 'Finished!'
 	print 'Accuracy: %0.2f%% (+/- %0.2f%%)' % (accuracies.mean()*100, accuracies.std()*2*100)
+
+def main():
+	cheapX, cheapY, expX, expY = extractData('attributes_all.txt')
+	clf = tree.DecisionTreeClassifier(max_depth = 3)
+	print 'Num cheap restaurants:', len(cheapY)
+	print 'Num expensive restaurants:', len(expY)
+	classifyWithUndersampling(clf, expX, expY, cheapX, cheapY)
 
 		
 if __name__ == '__main__':
