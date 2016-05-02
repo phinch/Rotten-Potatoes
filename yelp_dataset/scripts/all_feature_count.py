@@ -35,8 +35,8 @@ import csv
 attr = {}
 count = 0
 #music = {}
-with open("featlist.txt", "wb") as r:
-    with open('restaurants.json') as f:
+with open("../cleaned_data/featlist.txt", "wb") as r:
+    with open('../data/restaurants.json') as f:
         for line in f:
             elt = json.loads(line)
             business_id = elt['business_id'].encode("utf-8")

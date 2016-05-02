@@ -35,10 +35,10 @@ import csv
 # attr = {}
 count = 0
 #music = {}
-with open("attributes_without_classyfication.txt", "wb") as r:
+with open("../cleaned_data/attributes_without_classyfication.txt", "wb") as r:
     r.write("business_id|stars|takeout|drivethru|outdoorseating|caters|noise|p_garage|p_street|p_validated|p_lot|p_valet|delivery|price|attire|tv|gf_dessert|gf_latenight|gf_lunch|gf_dinner|gf_breakfast|gf_brunch|reservations|a_romantic|a_intimate|a_classy|a_hipster|a_divey|a_touristy|a_trendy|a_upscale|a_casual|waiter|creditcards|kids|groups|alcohol|wheelchair|wifi|counter|dogs|dancing|coat|smoking|happyhour|m_dj|m_background|m_jukebox|m_live|m_video|m_karaoke|byob|corkage|byobcorkage|tfhours|ages|d_dairyfree|d_glutenfree|d_vegan|d_kosher|d_halal|d_soyfree|d_vegetarian|appt|insurance\n")
 
-    with open('restaurants.json') as f:
+    with open('../data/restaurants.json') as f:
         for line in f:
             elt = json.loads(line)
             business_id = elt['business_id'].encode("utf-8")

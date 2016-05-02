@@ -4,7 +4,7 @@ import csv
 
 price = dict()
 
-with open('business.txt') as f:
+with open('../cleaned_data/business.txt') as f:
 	f.readline()
 	for line in f:
 		cpts = line.split("|")

@@ -16,12 +16,12 @@ with open('yelp_dataset_challenge_academic_dataset~/yelp_academic_dataset_review
 
 bids = {}
 
-with open('bids.txt', 'r') as b:
+with open('../cleaned_data/bids.txt', 'r') as b:
     for bid in b:
         stripped = bid.rstrip('\n')
         bids[stripped] = ""
 
-with open("review.txt", "wb") as r:
+with open("../cleaned_data/review.txt", "wb") as r:
     r.write("business_id|stars|date\n")
     for elt in data:
         business_id = elt['business_id'].encode("utf-8")

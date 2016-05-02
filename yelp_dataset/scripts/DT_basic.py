@@ -53,11 +53,11 @@ def extractData(datapath):
 
 def generateDotFile(clf,X,Y):
 	clf = clf.fit(X,Y)
-	with open('DT_basic.dot', 'w') as f:
+	with open('../dt_graphic_representation/DT_basic.dot', 'w') as f:
 		f = tree.export_graphviz(clf, out_file=f)
 		
 if __name__ == '__main__':
-	X,Y = extractData('attributes_all.txt')
+	X,Y = extractData('../cleaned_data/attributes_all.txt')
 	assert len(X) == len(Y)
 	clf = tree.DecisionTreeClassifier(max_depth = 3)
 	scores = cross_validation.cross_val_score(clf,X,Y,cv=10)
