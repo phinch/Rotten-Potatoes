@@ -102,7 +102,7 @@ $("document").ready(function(){
         var dataset = [];
         var height = 800;
 
-        d3.csv("avgs_by_price.csv", function(input){
+        d3.csv("../cleaned_data/avgs_by_price.csv", function(input){
             for(var i in input){
                 input[i]["Name"] = input[i]["Price"];
                 dataset.push(input[i]);
@@ -124,7 +124,7 @@ $("document").ready(function(){
         var dataset = [];
         var height = 800;
 
-        d3.csv("avg_by_genre.csv", function(input){
+        d3.csv("../cleaned_data/avg_by_genre.csv", function(input){
             for(var i in input){
                 input[i]["Name"] = input[i]["Genre"];
                 dataset.push(input[i]);
@@ -166,7 +166,7 @@ $("document").ready(function(){
         var dataset = [];
         var height = 800;
 
-        d3.csv("avg_by_genre.csv", function(input){
+        d3.csv("../cleaned_data/avg_by_genre.csv", function(input){
             for(var i in input){
                 input[i]["Name"] = input[i]["Genre"];
                 if (checked.has(input[i]["Genre"])){
@@ -191,7 +191,7 @@ $("document").ready(function(){
         var dataset = [];
         var height = 800;
 
-        d3.csv("avgs_by_price.csv", function(input){
+        d3.csv("../cleaned_data/avgs_by_price.csv", function(input){
             for(var i in input){
                 input[i]["Name"] = input[i]["Price"];
                 if (checked.has(input[i]["Price"])){
@@ -227,7 +227,7 @@ $("document").ready(function(){
             }
         });
 
-        d3.csv("avg_by_genre.csv", function(input){
+        d3.csv("../cleaned_data/avg_by_genre.csv", function(input){
             for(var i in input){
                 input[i]["Name"] = input[i]["Genre"];
                 if (checked.has(input[i]["Genre"])){
@@ -237,7 +237,7 @@ $("document").ready(function(){
 
             width = 80*genredata.length;
             
-            d3.csv("avgs_by_price.csv", function(input){
+            d3.csv("../cleaned_data/avgs_by_price.csv", function(input){
                 for(var i in input){
                     input[i]["Name"] = input[i]["Price"];
                     if (checked.has(input[i]["Price"])){
@@ -248,7 +248,7 @@ $("document").ready(function(){
 
 
                 var dsv = d3.dsv("|", "text/plain");
-                dsv("business.txt", function(input){
+                dsv("../cleaned_data/business.txt", function(input){
                     var genrehash = [];
                     for(var i in input){
                         //data needs to fit in both datasets
@@ -337,7 +337,7 @@ $("document").ready(function(){
             }
         });
 
-        d3.csv("avgs_by_price.csv", function(input){
+        d3.csv("../cleaned_data/avgs_by_price.csv", function(input){
             for(var i in input){
                 input[i]["Name"] = input[i]["Price"];
                 if (checked.has(input[i]["Price"])){
@@ -347,7 +347,7 @@ $("document").ready(function(){
 
             width = 80*pricedata.length;
             
-            d3.csv("avg_by_genre.csv", function(input){
+            d3.csv("../cleaned_data/avg_by_genre.csv", function(input){
                 for(var i in input){
                     input[i]["Name"] = input[i]["Genre"];
                     if (checked.has(input[i]["Genre"])){
@@ -359,7 +359,7 @@ $("document").ready(function(){
 
                 var dsv = d3.dsv("|", "text/plain");
                 console.log(pricedata, genredata);
-                dsv("business.txt", function(input){
+                dsv("../cleaned_data/business.txt", function(input){
                     var pricehash = [];
                     for(var i in input){
                         //data needs to fit in both datasets
