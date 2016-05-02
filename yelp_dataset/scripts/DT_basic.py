@@ -48,6 +48,7 @@ def extractData(datapath):
 			price = int(price)
 			X.append(feat)
 			Y.append(price)
+
 	return X,Y
 
 

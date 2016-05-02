@@ -1,0 +1,63 @@
+*{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    margin: 0;
+}
+
+body{
+    min-width: 1000px;
+}
+
+#header{
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+button {
+	border-radius: 12px;
+	font-size: 14px;
+	border: none;
+	cursor: pointer;
+	width: 120px;
+	height: 40px;
+	color: white;
+	background-color: #606060;
+}
+
+#scrape{
+    width: 80px;
+    height: 30px;
+}
+
+.node{
+    vertical-align: middle;
+}
+
+.two{
+    margin: 0 160px 0 160px;
+}
+
+.three{
+    margin: 0 50px 0 50px;
+}
+
+.final{
+    margin: 20px 100px 0 100px;
+}
+
+.tier{
+    height: 120px;
+    text-align: center;
+}
+
+#scraper{
+    text-align: center;
+}
+
+#input{
+    width: 200px;
+}
+
+#tree{
+    position: absolute;
+}
