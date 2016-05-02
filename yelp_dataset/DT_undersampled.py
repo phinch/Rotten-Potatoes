@@ -107,22 +107,31 @@ def generateDotFileWithUndersampling(clf, smallX, smallY, bigX, bigY):
 def parseArgs():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-classifier', required=True, help='dt or rf')
+	parser.add_argument('-gendot', default=False, help='generate dot file')
 	opts = parser.parse_args()
 	classifier = opts.classifier
+	gendot = opts.gendot
 	if classifier not in ['dt', 'rf']:
 		print 'Invalid classifier.'
 		sys.exit(0)
-	return classifier
+	if gendot and classifier == 'rf':
+		print 'gendot incompatible w/ random forest'
+		sys.exit(0)
+	return classifier, gendot
 
 def main():  # TODO: parse user input to determine which classifier to run
-	classifier = parseArgs()
+	classifier, gendot = parseArgs()
 	cheapX, cheapY, expX, expY = extractData('attributes_all.txt')
 	print 'Num cheap restaurants:', len(cheapY)
 	print 'Num expensive restaurants:', len(expY)
-	clf = tree.DecisionTreeClassifier(max_depth=3)
-	if classifier == 'rf':
+	if classifier == 'dt':
+		clf = tree.DecisionTreeClassifier(max_depth=3)
+		classifyWithUndersampling(clf, expX, expY, cheapX, cheapY)
+		if gendot:
+			generateDotFileWithUndersampling(clf, expX, expY, cheapX, cheapY)
+	elif classifier == 'rf':
 		clf = ensemble.RandomForestClassifier(max_depth=6)
-	classifyWithUndersampling(clf, expX, expY, cheapX, cheapY)
+		classifyWithUndersampling(clf, expX, expY, cheapX, cheapY)
 
 if __name__ == '__main__':
 	main()
