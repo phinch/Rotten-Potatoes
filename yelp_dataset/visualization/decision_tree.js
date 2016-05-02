@@ -10,82 +10,50 @@ $("document").ready(function(){
     $("#tree").attr("height", (numTiers + 1) * $("#tier1").height());
 
     //Draw paths from node to node
-    for(var i = 1; i < numTiers; i++){
+    for(var i = 1; i <= numTiers; i++){
         $("#tier"+i+" .node").each(function(index) {
             var parentid = $(this).parent().attr("id");
             var parenttier = parseInt(parentid.charAt(4));
             //For some index, we want to draw lines to the next tier's index*2 and (index*2+1)
             var myy = $(this).position()["top"] + 40 - header;
-            var myx = $(this).position()["left"] + buttonwidth/2;
+            if($(this).css("margin") == "0px"){
+                var myx = $(this).position()["left"] + buttonwidth/2;
+            }else{
+                var myx = $(this).position()["left"] + buttonwidth/2 + parseInt($(this).css("margin").split(" ")[1].split('p')[0]);
+            }
 
             for(var c = index*2; c <= index*2+1; c++){
-                var child = $("#tier"+(parenttier+1)).children().eq(c)
+                var child = $("#tier"+(parenttier+1)).children().eq(c);
                 var childy = child.position()["top"] - header;
-                var childx = child.position()["left"] + buttonwidth/2;
+                var childx = child.position()["left"] + child.width()/2 + 6 + parseInt(child.css("margin").split(" ")[1].split('p')[0]);
 
                 var middlex = (myx + childx)/2;
                 var middley = (myy + childy)/2;
 
                 var text = "Yes";
-                //var color = green
+                var color = "#a3ff89";
 
                 if(c%2 == 0){
                     text = "No";
-                    //var color = red
+                    var color = "#ffaa81";
                 }
 
                 d3.select("#tree").append("path")
                     .attr("d", "M"+myx+" "+myy+" L"+childx+" "+childy)
-                    .attr("stroke", "#cccccc");
-                    //TODO: Change color above
+                    .attr("stroke", color);
 
                 d3.select("#tree").append("text")
                     .text(text)
                     .attr("y", middley)
                     .attr("x", middlex)
+                    .attr("text-anchor", "middle")
                     .classed("yesno", true);
             }
             
         });
     }
-
-    //Now, draw the lines from the last tier to the classifiers
-    var four = $("#classifier").children().eq(1);
-    var one = $("#classifier").children().eq(0);
-    var fourx = four.position()["top"] - header;
-    var foury = four.position()["left"] + buttonwidth/2;
-    var onex = one.position()["top"];
-    var oney = one.position()["left"];
-
-    $("#tier"+numTiers+" .node").each(function(index){
-        var myy = $(this).position()["top"] + 40;
-        var myx = $(this).position()["left"];
-
-        d3.select("#tree").append("path")
-            .attr("d", "M"+myx+" "+myy+" L"+fourx+" "+foury)
-            .attr("stroke", "#cccccc");
-            //TODO: Change color above
-
-        d3.select("#tree").append("text")
-            .text("$$$ or $$$$")
-            .attr("y", (myy + foury)/2)
-            .attr("x", (myx + fourx)/2)
-            .classed("yesno", true);
-
-        d3.select("#tree").append("path")
-            .attr("d", "M"+myx+" "+myy+" L"+onex+" "+oney)
-            .attr("stroke", "#cccccc");
-            //TODO: Change color above
-
-        d3.select("#tree").append("text")
-            .text("$ or $$")
-            .attr("y", (myy + oney)/2)
-            .attr("x", (myx + onex)/2)
-            .classed("yesno", true);
-    });
-
     //The tree is now fully drawn.
-/*
+
     //Let's add a tooltip for each bubble. I guess. //TODO
     //An attempt to read information from the dot file:
     var treedata = [];
@@ -123,7 +91,7 @@ $("document").ready(function(){
 
         }
     });
-*/
+
 /*
     //TODO: Clicking on parts of the tree?
     $(".node").on("mousemove", function(event){
