@@ -100,7 +100,7 @@ def classifyWithUndersampling(clf, smallX, smallY, bigX, bigY):
 def generateDotFileWithUndersampling(clf, smallX, smallY, bigX, bigY):
 	X, Y = getUndersampledSets(smallX, smallY, bigX, bigY)
 	clf = clf.fit(X, Y)
-	with open('DT_undersampled.dot', 'w') as f:
+	with open('../dt_graphic_representation/DT_undersampled.dot', 'w') as f:
 		tree.export_graphviz(clf, out_file=f)
 	print 'Generated dot file'
 	
@@ -121,7 +121,7 @@ def parseArgs():
 
 def main():  # TODO: parse user input to determine which classifier to run
 	classifier, gendot = parseArgs()
-	cheapX, cheapY, expX, expY = extractData('attributes_all.txt')
+	cheapX, cheapY, expX, expY = extractData('../cleaned_data/attributes_all.txt')
 	print 'Num cheap restaurants:', len(cheapY)
 	print 'Num expensive restaurants:', len(expY)
 	if classifier == 'dt':

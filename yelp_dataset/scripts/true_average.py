@@ -10,7 +10,7 @@ import json
 
 scores = {} #Name of genre, [yscore, ycount]
 
-biz_reader = csv.reader(open('business.txt', 'rb'), delimiter = "|")
+biz_reader = csv.reader(open('../cleaned_data/business.txt', 'rb'), delimiter = "|")
 next(biz_reader, None)
 
 score = 0

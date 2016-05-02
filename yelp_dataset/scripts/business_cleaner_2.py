@@ -46,7 +46,7 @@ with open('test.json') as f:
 # cities = []
 
 scores = {}
-score_reader = csv.reader(open("review.txt", 'rb'), delimiter = "|")
+score_reader = csv.reader(open("../cleaned_data/review.txt", 'rb'), delimiter = "|")
 next(score_reader, None)
 
 for line in score_reader:
@@ -58,9 +58,9 @@ for line in score_reader:
         scores[bid][0] += score
         scores[bid][1] += 1
 
-with open("business.txt", "wb") as r:
+with open("../cleaned_data/business.txt", "wb") as r:
     r.write("business_id|name|city|state|latitude|longitude|stars|review_count|price|genres|avg score\n")
-    with open('restaurants.json') as f:
+    with open('../data/restaurants.json') as f:
         for line in f:
             elt = json.loads(line)
             business_id = elt['business_id'].encode("utf-8")
@@ -84,11 +84,10 @@ with open("business.txt", "wb") as r:
             if categories == []:
                 genres = "N/A"
             else:
-                for i in range(0, len(categories)):
-                    if categories[i] != "Restaurants":
-                        genres += categories[i].encode("utf-8")
-                        if i != (len(categories) - 1) and categories[i+1] != "Restaurants":
-                            genres += " /// "
+                genres += categories[0].encode("utf-8")
+                for i in range(1, len(categories)):
+                    genres += " /// "
+                    genres += categories[i].encode("utf-8")
             
             if business_id in scores:
                 score = round(float(scores[business_id][0])/scores[business_id][1], 2)

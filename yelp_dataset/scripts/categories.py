@@ -96,7 +96,7 @@ categories = {
 ###YELP AND FOURSQUARE
 scores = {} #Name of genre, [yscore, ycount, fscore, fcount]
 
-biz_reader = csv.reader(open('business.txt', 'rb'), delimiter = "|")
+biz_reader = csv.reader(open('../cleaned_data/business.txt', 'rb'), delimiter = "|")
 next(biz_reader, None)
 
 for line in biz_reader: #business_id|name|city|state|latitude|longitude|stars|review_count|price|genres|avg score
@@ -124,7 +124,7 @@ for line in biz_reader: #business_id|name|city|state|latitude|longitude|stars|re
                     done += category
 
 
-with(open('avg_by_genre.csv', 'wb')) as r:
+with(open('../cleaned_data/avg_by_genre.csv', 'wb')) as r:
     rwriter = csv.writer(r, delimiter = ",")
     rwriter.writerow(["Genre", "Average"])
 

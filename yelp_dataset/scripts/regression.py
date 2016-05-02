@@ -92,7 +92,7 @@ def process_data(data):
     plt.show()
 
 def main():
-    data = extract_data('business.csv')
+    data = extract_data('../cleaned_data/business.csv')
     states = data['states']
     prices = data['prices']
     genres = data['genres']
