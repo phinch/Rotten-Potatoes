@@ -61,6 +61,20 @@ button {
     width: 200px;
 }
 
-#tree{
+.tree{
     position: absolute;
+}
+
+.tooltip{
+    position: absolute;
+    background: #e0e0e0;
+    color: #333333;
+    width: 160px;
+    text-align: center;
+    border-radius: 15%;
+    font-size: 14px;
+}
+
+.classtip{
+    width: 80px;
 }
