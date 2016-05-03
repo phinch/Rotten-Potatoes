@@ -51,7 +51,6 @@ def extractData(datapath):
 						curr_val = 0
 				feat.append(curr_val)
 			price = row[price_ind]
-			assert price != 'n/a'
 			price = int(price)
 			if price > 2:
 				expX.append(feat)
@@ -119,7 +118,7 @@ def parseArgs():
 		sys.exit(0)
 	return classifier, gendot
 
-def main():  # TODO: parse user input to determine which classifier to run
+def main():
 	classifier, gendot = parseArgs()
 	cheapX, cheapY, expX, expY = extractData('../cleaned_data/attributes_all.txt')
 	print 'Num cheap restaurants:', len(cheapY)
