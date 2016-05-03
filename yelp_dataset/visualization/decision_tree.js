@@ -99,8 +99,8 @@ $("document").ready(function(){
                     }
                 }
             }else if(line.charAt(3) == "-" && line.charAt(4) == ">"){
-                var parenttier = parseInt(treedata[line.charAt(0)].parent().attr("id").charAt(4));
-                var parentindex = treedata[line.charAt(0)].index();
+                var parenttier = parseInt(treedata[(line.charAt(0)+line.charAt(1))].parent().attr("id").charAt(4));
+                var parentindex = treedata[(line.charAt(0)+line.charAt(1))].index();
                 if((line.charAt(0)+line.charAt(1)) in treelinks){
                     treelinks[(line.charAt(0)+line.charAt(1))].push(line.charAt(6)+line.charAt(7));
                     if(parenttier != numTiers){
@@ -135,8 +135,15 @@ $("document").ready(function(){
             var gini = myline.split("\\")[1].split(" = ")[1];
             var samples = myline.split("\\")[2].split(" = ")[1];
             var children = treelinks[key];
-            var child1 = treelines[children[0]].split("\\")[2].split(" = ")[1];
-            var child2 = treelines[children[1]].split("\\")[2].split(" = ")[1];
+            
+            var parenttier = parseInt(treedata[key].parent().attr("id").charAt(4));
+            if(parenttier == numTiers-1){
+                var child1 = treelines[children[0]].split("\\")[1].split(" = ")[1];
+                var child2 = treelines[children[1]].split("\\")[1].split(" = ")[1];
+            }else{
+                var child1 = treelines[children[0]].split("\\")[2].split(" = ")[1];
+                var child2 = treelines[children[1]].split("\\")[2].split(" = ")[1];
+            }
             
             tip += "Samples: "+samples+"<br>";
             tip += "No: "+child1+"<br>";
@@ -165,7 +172,7 @@ $("document").ready(function(){
 
         //Now, we can make a separate tooltip for the final results ($/$$ and $$$/$$$$)
         for(var key in classifiers){
-            var myline = treelines[key];
+            var myline = classifiers[key];
             var id = treedata[key].attr("id")+"tool";
             var samples = myline.split("\\")[1].split(" = ")[1];
             var myx = treedata[key].position()["left"] + parseInt(treedata[key].css("margin").split(" ")[1].split('p')[0]);

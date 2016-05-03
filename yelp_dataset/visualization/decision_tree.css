@@ -67,8 +67,8 @@ button {
 
 .tooltip{
     position: absolute;
-    background: #e0e0e0;
-    color: #333333;
+    background: #e5e5e5;
+    color: #111111;
     width: 160px;
     text-align: center;
     border-radius: 15%;
