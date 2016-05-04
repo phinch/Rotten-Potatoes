@@ -126,7 +126,7 @@ $("document").ready(function(){
                 }
             }
         }
-        console.log(treedata, treelinks, treelines, classifiers);
+
         //We now have all the information we need to create a tooltip for the thing
         //Treelines are in form 0 [label="X[9] <= 0.5\ngini = 0.5\nsamples = 3332\nvalue = [1666, 1666]"] ;
         for(var key in treelinks){
@@ -192,7 +192,7 @@ $("document").ready(function(){
     });
 
 
-    //TODO: Clicking on parts of the tree?
+    //TODO: Clicking on parts of the tree? 
     $(".node").on("mousemove", function(event){
         var id = event.target.id;
         d3.select("#"+id+"tool").transition().style("opacity", 1).transition().style("display", "initial");
@@ -203,6 +203,77 @@ $("document").ready(function(){
         d3.select("#"+id+"tool").transition().style("opacity", 0).transition().style("display", "none");
     });
 
-    //TODO: Scraper stuff
+    //TODO: Scraper stuff???? No longer sure if possible
 
+    //YQL doesn't work either. I don't think we can do this in live-time, would have to scrape beforehand and have a search function instead.
+
+    /* Tried to use the Yelp API to search businesses. Yelp's API doesn't provide the same attributes as the dataset challenge, unfortunately
+{
+    "consumer-key": "bYH7b5GAqAxC0mHaBjnLNA"
+    "consumer-secret": "QRWobYxWDGhDQ_JrAGHWFbkzBTk"
+    "token": "U8k-ZWJ874iILPxIdr9QW5zLUZZuPOnQ"
+    "token-secret": "KTSlXy-ruQPRB2POImIh3Ohncdk"
+}
+    
+    //Code Credit: https://github.com/levbrie/mighty_marks/blob/master/yelp-search-sample.html (small edits made)
+    $("#scrape").on("click", function(event){
+        var url = $("#input").val();
+        var check = url.split("biz/");
+        if(check.length != 2){ //TODO: More robust checking
+            alert("Sorry, your URL wasn't in a form we could process. Try again?");
+            return;
+        }
+        var urlbiz = check[1];
+
+	    var auth = {
+		    //
+		    // Update with your auth tokens.
+		    //
+		    consumerKey : "bYH7b5GAqAxC0mHaBjnLNA",
+		    consumerSecret : "QRWobYxWDGhDQ_JrAGHWFbkzBTk",
+		    accessToken : "U8k-ZWJ874iILPxIdr9QW5zLUZZuPOnQ",
+		    // This example is a proof of concept, for how to use the Yelp v2 API with javascript.
+		    // You wouldn't actually want to expose your access token secret like this in a real application.
+		    accessTokenSecret : "KTSlXy-ruQPRB2POImIh3Ohncdk",
+		    serviceProvider : {
+			    signatureMethod : "HMAC-SHA1"
+		    }
+	    };
+
+		var terms = urlbiz;
+		var near = 'USA';
+		var accessor = {
+			consumerSecret : auth.consumerSecret,
+			tokenSecret : auth.accessTokenSecret
+		};
+		parameters = [];
+		parameters.push(['term', terms]);
+		parameters.push(['location', near]);
+		parameters.push(['callback', 'cb']);
+		parameters.push(['oauth_consumer_key', auth.consumerKey]);
+		parameters.push(['oauth_consumer_secret', auth.consumerSecret]);
+		parameters.push(['oauth_token', auth.accessToken]);
+		parameters.push(['oauth_signature_method', 'HMAC-SHA1']);
+		var message = {
+			'action' : 'http://api.yelp.com/v2/search',
+			'method' : 'GET',
+			'parameters' : parameters
+		};
+		OAuth.setTimestampAndNonce(message);
+		OAuth.SignatureMethod.sign(message, accessor);
+		var parameterMap = OAuth.getParameterMap(message.parameters);
+		parameterMap.oauth_signature = OAuth.percentEncode(parameterMap.oauth_signature)
+		console.log(parameterMap);
+		$.ajax({
+			'url' : message.action,
+			'data' : parameterMap,
+			'cache' : true,
+			'dataType' : 'jsonp',
+			'jsonpCallback' : 'cb',
+			'success' : function(data, textStats, XMLHttpRequest) {
+				var restaurant = data[0]; //Assumes first result is the right one
+			}
+		});
+    });
+    */
 });
