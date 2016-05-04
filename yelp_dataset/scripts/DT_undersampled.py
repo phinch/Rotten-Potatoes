@@ -25,9 +25,12 @@ def extractData(datapath):
 				curr_val = row[i]
 				if i == 1:  # stars
 					if curr_val == 'n/a':
-						curr_val = 3.0  # average stars
+						curr_val = 0
 					else:
-						curr_val = float(curr_val)
+						if float(curr_val) > 3.0:
+							curr_val = 1
+						else:
+							curr_val = 0
 				elif i == 6:  # noise
 					if curr_val in ['loud', 'very_loud']:
 						curr_val = 1
@@ -60,6 +63,15 @@ def extractData(datapath):
 				cheapY.append(0)
 	assert len(cheapX) == len(cheapY)
 	assert len(expX) == len(expY)
+	return cheapX, cheapY, expX, expY
+	
+def loadData():
+	cheapX = np.load('../cleaned_data/cheapX.npy')
+	cheapY = np.load('../cleaned_data/cheapY.npy')
+	expX = np.load('../cleaned_data/expX.npy')
+	expY = np.load('../cleaned_data/expY.npy')
+	print np.min(cheapX)
+	print np.max(cheapX)
 	return cheapX, cheapY, expX, expY
 
 def shuffleListPairs(X, Y):
@@ -121,6 +133,15 @@ def parseArgs():
 def main():
 	classifier, gendot = parseArgs()
 	cheapX, cheapY, expX, expY = extractData('../cleaned_data/attributes_all.txt')
+	#cheapX, cheapY, expX, expY = loadData()
+	cheapX = list(np.array(cheapX))
+	cheapY = list(np.array(cheapY))
+	expX = list(np.array(expX))
+	expY = list(np.array(expY))
+	#cheapX, cheapY, expX, expY = loadData()
+	#print len(cheapY)
+	#print len(cheapX[0])
+	#print len(expY)
 	print 'Num cheap restaurants:', len(cheapY)
 	print 'Num expensive restaurants:', len(expY)
 	if classifier == 'dt':
