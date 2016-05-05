@@ -18,7 +18,7 @@
     width: 150px;
     height: 150px;
     display: inline-block;
-    margin: 5px 5px 5px 5px;
+    margin: 10px 10px 10px 10px;
     vertical-align: middle;
 }
 
@@ -32,4 +32,8 @@
 .descrip{
     position: relative;
     top: 35px;
+}
+
+.label{
+    font-size: 11px;
 }

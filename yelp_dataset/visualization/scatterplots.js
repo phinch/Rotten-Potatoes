@@ -28,7 +28,7 @@ $("document").ready(function(){
                 }
 
                 else{
-                    var plot = d3.select(boxid).append("svg").attr("height", height).attr("width", width);
+                    var plot = d3.select(boxid).append("svg").attr("height", height+10).attr("width", width+10);
                     plot.append("line")
                         .attr("stroke-width", 1)
                         .attr("stroke", "#bbbbbb")
@@ -60,6 +60,45 @@ $("document").ready(function(){
                         .attr("y1", 0)
                         .attr("x2", width*3/4)
                         .attr("y2", height);
+
+                    plot.append("text")
+                        .text(axes[map[i]][0])
+                        .attr("x", width/4)
+                        .attr("y", height+10)
+                        .attr("text-anchor", "middle")
+                        .classed("label x", true);
+
+                    plot.append("text")
+                        .text(axes[map[i]][1])
+                        .attr("x", width*3/4)
+                        .attr("y", height+10)
+                        .attr("text-anchor", "middle")
+                        .classed("label x", true);
+
+                    var h = Math.sqrt(Math.pow((width+2), 2) + Math.pow((height*3/4), 2));
+                    var a = Math.PI/2 - Math.atan((height*3/4)/(width+2));
+                    var x = h*Math.cos(a);
+                    var y = h*Math.sin(a);
+                    console.log(h, a, x, y);
+                    plot.append("text")
+                        .text(axes[map[j]][0])
+                        .attr("x", x)
+                        .attr("y", -y)
+                        .attr("text-anchor", "middle")
+                        .classed("label y", true);
+
+                    var h = Math.sqrt(Math.pow((width+2), 2) + Math.pow((height/4), 2));
+                    var a = Math.PI/2 - Math.atan((height/4)/(width+2));
+                    var x = h*Math.cos(a);
+                    var y = h*Math.sin(a);
+                    plot.append("text")
+                        .text(axes[map[j]][1])
+                        .attr("x", x)
+                        .attr("y", -y)
+                        .attr("text-anchor", "middle")
+                        .classed("label y", true);
+
+                    d3.selectAll(".y").attr("transform", "rotate(90)");
 
                     //Count data
                     var topleft = 0;
