@@ -162,12 +162,12 @@ $("document").ready(function(){
             var myy = treedata[key].position()["top"] + treedata[key].height()*1/4 - 25;
 
             if (key == 2) {
-                myx = 100;
+                myx = treedata[key].position()["left"] - treedata[key].width();
             }
 
             if (key == 5) {
                 console.log(myx);
-                myx = 400;
+                myx = treedata[key].position()["left"] - treedata[key].width()/2;
                 d3.select("#content").append("div")
                     .html("<p class = 'tooltext'>"+tip+"</p>")
                     .style("left", myx+"px")
@@ -177,7 +177,7 @@ $("document").ready(function(){
                     .style("opacity", 0);
             } else if (key == 9) {
                 console.log(myx);
-                myx = 848;
+                myx = treedata[key].position()["left"] + treedata[key].width()*1.5;
                 d3.select("#content").append("div")
                     .html("<p class = 'tooltext'>"+tip+"</p>")
                     .style("left", myx+"px")
