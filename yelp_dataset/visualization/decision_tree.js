@@ -154,20 +154,48 @@ $("document").ready(function(){
             var id = treedata[key].attr("id")+"tool";
 
             if(treedata[key].css("margin") == "0px"){
-                var myx = treedata[key].position()["left"] + treedata[key].width()*3/4;
+                var myx = treedata[key].position()["left"] + treedata[key].width()*4/3;
             }else{
-                var myx = treedata[key].position()["left"] + treedata[key].width()*3/4 + parseInt(treedata[key].css("margin").split(" ")[1].split('p')[0]);
+                var myx = treedata[key].position()["left"] + treedata[key].width()*4/3 + parseInt(treedata[key].css("margin").split(" ")[1].split('p')[0]);
             }
             
-            var myy = treedata[key].position()["top"] + treedata[key].height()*1/4;
+            var myy = treedata[key].position()["top"] + treedata[key].height()*1/4 - 25;
 
-            d3.select("#content").append("div")
-                .html("<p class = 'tooltext'>"+tip+"</p>")
-                .style("left", myx+"px")
-                .style("top", myy+"px")
-                .attr("id", id)
-                .classed("tooltip", true)
-                .style("opacity", 0);
+            if (key == 2) {
+                myx = treedata[key].position()["left"] - treedata[key].width();
+            }
+
+            if (key == 5) {
+                console.log(myx);
+                myx = treedata[key].position()["left"] - treedata[key].width()/2;
+                d3.select("#content").append("div")
+                    .html("<p class = 'tooltext'>"+tip+"</p>")
+                    .style("left", myx+"px")
+                    .style("top", myy+"px")
+                    .attr("id", id)
+                    .classed("tooltipsmall", true)
+                    .style("opacity", 0);
+            } else if (key == 9) {
+                console.log(myx);
+                myx = treedata[key].position()["left"] + treedata[key].width()*1.5;
+                d3.select("#content").append("div")
+                    .html("<p class = 'tooltext'>"+tip+"</p>")
+                    .style("left", myx+"px")
+                    .style("top", myy+"px")
+                    .attr("id", id)
+                    .classed("tooltipsmall", true)
+                    .style("opacity", 0);
+            } else {
+                d3.select("#content").append("div")
+                    .html("<p class = 'tooltext'>"+tip+"</p>")
+                    .style("left", myx+"px")
+                    .style("top", myy+"px")
+                    .attr("id", id)
+                    .classed("tooltip", true)
+                    .style("opacity", 0);
+            }
+
+            
         }
 
         //Now, we can make a separate tooltip for the final results ($/$$ and $$$/$$$$)
@@ -198,10 +226,10 @@ $("document").ready(function(){
         d3.select("#"+id+"tool").transition().style("opacity", 1).transition().style("display", "initial");
     });
 
-    $(".node").on("mouseleave", function(event){
-        var id = event.target.id;
-        d3.select("#"+id+"tool").transition().style("opacity", 0).transition().style("display", "none");
-    });
+    // $(".node").on("mouseleave", function(event){
+    //     var id = event.target.id;
+    //     d3.select("#"+id+"tool").transition().style("opacity", 0).transition().style("display", "none");
+    // });
 
     //TODO: Scraper stuff???? No longer sure if possible
 
