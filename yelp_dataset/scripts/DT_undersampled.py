@@ -7,6 +7,13 @@ from sklearn import tree
 from sklearn import ensemble
 from sklearn import cross_validation
 
+from sklearn.svm import SVC
+from sklearn.preprocessing import StandardScaler
+from sklearn.cross_validation import StratifiedShuffleSplit
+from sklearn.grid_search import GridSearchCV
+
+from sklearn.datasets import load_iris
+
 def extractData(datapath):
 	with open(datapath, 'rb') as fid:
 		reader = csv.reader(fid, delimiter='|')
@@ -64,15 +71,6 @@ def extractData(datapath):
 	assert len(cheapX) == len(cheapY)
 	assert len(expX) == len(expY)
 	return cheapX, cheapY, expX, expY
-	
-def loadData():
-	cheapX = np.load('../cleaned_data/cheapX.npy')
-	cheapY = np.load('../cleaned_data/cheapY.npy')
-	expX = np.load('../cleaned_data/expX.npy')
-	expY = np.load('../cleaned_data/expY.npy')
-	print np.min(cheapX)
-	print np.max(cheapX)
-	return cheapX, cheapY, expX, expY
 
 def shuffleListPairs(X, Y):
 	XY = zip(X, Y)
@@ -91,10 +89,9 @@ def getUndersampledSets(smallX, smallY, bigX, bigY):
 	Y = bigTrainY + smallY
 	return shuffleListPairs(X, Y)
 
-def classifyWithUndersampling(clf, smallX, smallY, bigX, bigY):
+def classifyWithUndersampling(clf, smallX, smallY, bigX, bigY, iter_weight = 3):
 	len_small = len(smallY)
 	len_big = len(bigY)
-	iter_weight = 3
 	num_iter = int(float(len_big) / len_small) * iter_weight  # scale num_iter with big/small ratio
 	accuracies = []
 	# Undersample and obtain average score num_iter times, and then average together the average scores
@@ -122,26 +119,17 @@ def parseArgs():
 	opts = parser.parse_args()
 	classifier = opts.classifier
 	gendot = opts.gendot
-	if classifier not in ['dt', 'rf']:
+	if classifier not in ['dt', 'rf', 'svm']:
 		print 'Invalid classifier.'
 		sys.exit(0)
-	if gendot and classifier == 'rf':
-		print 'gendot incompatible w/ random forest'
+	if gendot and classifier in ['rf', 'svm']:
+		print 'gendot incompatible with', classifier
 		sys.exit(0)
 	return classifier, gendot
 
 def main():
 	classifier, gendot = parseArgs()
 	cheapX, cheapY, expX, expY = extractData('../cleaned_data/attributes_all.txt')
-	#cheapX, cheapY, expX, expY = loadData()
-	cheapX = list(np.array(cheapX))
-	cheapY = list(np.array(cheapY))
-	expX = list(np.array(expX))
-	expY = list(np.array(expY))
-	#cheapX, cheapY, expX, expY = loadData()
-	#print len(cheapY)
-	#print len(cheapX[0])
-	#print len(expY)
 	print 'Num cheap restaurants:', len(cheapY)
 	print 'Num expensive restaurants:', len(expY)
 	if classifier == 'dt':
@@ -152,6 +140,9 @@ def main():
 	elif classifier == 'rf':
 		clf = ensemble.RandomForestClassifier(max_depth=6)
 		classifyWithUndersampling(clf, expX, expY, cheapX, cheapY)
+	elif classifier == 'svm':
+		clf = SVC(C=0.1)
+		classifyWithUndersampling(clf, expX, expY, cheapX, cheapY, 1)
 
 if __name__ == '__main__':
 	main()
