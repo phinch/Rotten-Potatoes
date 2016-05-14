@@ -6,13 +6,10 @@ import numpy as np
 from sklearn import tree
 from sklearn import ensemble
 from sklearn import cross_validation
-
 from sklearn.svm import SVC
 from sklearn.preprocessing import StandardScaler
 from sklearn.cross_validation import StratifiedShuffleSplit
 from sklearn.grid_search import GridSearchCV
-
-from sklearn.datasets import load_iris
 
 def extractData(datapath):
 	with open(datapath, 'rb') as fid:
@@ -111,7 +108,7 @@ def generateDotFileWithUndersampling(clf, smallX, smallY, bigX, bigY):
 	with open('../dt_graphic_representation/DT_undersampled.dot', 'w') as f:
 		tree.export_graphviz(clf, out_file=f)
 	print 'Generated dot file'
-	
+
 def parseArgs():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-classifier', required=True, help='dt or rf')
@@ -127,6 +124,22 @@ def parseArgs():
 		sys.exit(0)
 	return classifier, gendot
 
+def getSVMParams(smallX, smallY, bigX, bigY):
+	X, y = getUndersampledSets(smallX, smallY, bigX, bigY)
+	X = np.array(X).astype('float64')
+	y = np.array(y).astype('float64')
+	scaler = StandardScaler()
+	X = scaler.fit_transform(X)
+	C_range = np.logspace(-2, 10, 13)
+	gamma_range = np.logspace(-9, 3, 13)
+	param_grid = dict(gamma=gamma_range, C=C_range)
+	cv = StratifiedShuffleSplit(y, n_iter=5, test_size=0.2, random_state=42)
+	print 'processing...'
+	grid = GridSearchCV(SVC(), param_grid=param_grid, cv=cv)
+	grid.fit(X, y)
+	print grid.best_params_, grid.best_score_
+	return grid.best_params_, grid.best_score_
+
 def main():
 	classifier, gendot = parseArgs()
 	cheapX, cheapY, expX, expY = extractData('../cleaned_data/attributes_all.txt')
@@ -138,11 +151,14 @@ def main():
 		if gendot:
 			generateDotFileWithUndersampling(clf, expX, expY, cheapX, cheapY)
 	elif classifier == 'rf':
-		clf = ensemble.RandomForestClassifier(max_depth=6)
+		clf = ensemble.RandomForestClassifier(max_depth=3)
 		classifyWithUndersampling(clf, expX, expY, cheapX, cheapY)
 	elif classifier == 'svm':
-		clf = SVC(C=0.1)
-		classifyWithUndersampling(clf, expX, expY, cheapX, cheapY, 1)
+		# C was obtained using the computationally expensive function getSVMParams
+		# The default gamma value of 'auto' was found to be optimal
+		C = 0.10000000000000001
+		clf = SVC(C=C)
+		classifyWithUndersampling(clf, expX, expY, cheapX, cheapY)
 
 if __name__ == '__main__':
 	main()
