@@ -1,5 +1,9 @@
 import json
 
+'''
+Prints out all labels and all possible values associated with them
+'''
+
 data = []
 with open('yelp_dataset_challenge_academic_dataset~/yelp_academic_dataset_review.json') as f:
     for line in f:

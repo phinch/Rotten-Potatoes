@@ -4,6 +4,10 @@ import requests
 import math
 import csv
 
+'''
+Writes csv file of four attributes - for scatterplot matrix visualization
+'''
+
 with open("../cleaned_data/philip.csv", "wb") as w:
     csvwriter = csv.writer(w)
     csvwriter.writerow(["price","reservations","attire","takeout"])

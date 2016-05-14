@@ -4,6 +4,10 @@ import requests
 import math
 import csv
 
+'''
+Writes all non classy restaurants and their features to a csv file
+'''
+
 # JSON format
 # {
 #     'type': 'business',
