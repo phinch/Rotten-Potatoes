@@ -4,6 +4,10 @@ import requests
 import math
 import csv
 
+'''
+Writes restaurants and their features in the 1-2 $ price tier to a csv file
+'''
+
 # JSON format
 # {
 #     'type': 'business',
@@ -368,42 +372,3 @@ with open("../cleaned_data/attributes_one-two.txt", "wb") as r:
     print count2
     print count3
     print count4
-    # "attributes": 
-    # {"Take-out": true, 
-    #  "Drive-Thru": false, 
-    #  "Outdoor Seating": false, 
-    #  "Caters": false, 
-    #  "Noise Level": "average", 
-    #  "Parking": 
-    #     {"garage": false, 
-    #      "street": false, 
-    #      "validated": false, 
-    #      "lot": false, 
-    #      "valet": false}, 
-    #  "Delivery": false, 
-    #  "Price Range": 1, 
-    #  "Attire": "casual", 
-    #  "Has TV": false, 
-    #  "Good For": 
-    #     {"dessert": false, 
-    #      "latenight": false, 
-    #      "lunch": false, 
-    #      "dinner": false, 
-    #      "breakfast": false, 
-    #      "brunch": false}, 
-    #  "Takes Reservations": false, 
-    #  "Ambience": 
-    #     {"romantic": false, 
-    #      "intimate": false, 
-    #      "classy": false, 
-    #      "hipster": false, 
-    #      "divey": false, 
-    #      "touristy": false, 
-    #      "trendy": false, 
-    #      "upscale": false, 
-    #      "casual": false}, 
-    #  "Waiter Service": false, 
-    #  "Accepts Credit Cards": true, 
-    #  "Good for Kids": true, 
-    #  "Good For Groups": true, 
-    #  "Alcohol": "none"}

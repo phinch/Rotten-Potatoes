@@ -3,6 +3,10 @@ import math
 import csv
 import operator
 
+'''
+Prints out number of restaurants by location and price
+'''
+
 price = dict()
 
 with open('../cleaned_data/business.txt') as f:

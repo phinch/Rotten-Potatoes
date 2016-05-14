@@ -2,6 +2,10 @@ import json
 import math
 import csv
 
+'''
+Prints out star averages by price tier
+'''
+
 price = dict()
 
 with open('../cleaned_data/business.txt') as f:

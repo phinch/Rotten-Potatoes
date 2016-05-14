@@ -4,6 +4,10 @@ import requests
 import math
 import csv
 
+'''
+writes all restaurants and their features to a csv file
+'''
+
 # JSON format
 # {
 #     'type': 'business',

@@ -4,6 +4,10 @@ import requests
 import math
 import csv
 
+'''
+Prints out all labels and the number of restaurants whose JSON object contains that label
+'''
+
 # JSON format
 # {
 #     'type': 'business',
@@ -34,8 +38,9 @@ import csv
 
 attr = {}
 count = 0
-#music = {}
+
 with open("../cleaned_data/featlist.txt", "wb") as r:
+    # iterate through each restaurant JSON
     with open('../data/restaurants.json') as f:
         for line in f:
             elt = json.loads(line)
@@ -43,16 +48,6 @@ with open("../cleaned_data/featlist.txt", "wb") as r:
             stars = elt['stars']
             attributes = elt['attributes']
 
-            # for a in attributes:
-            #     if a not in attr:
-            #         attr[a] = 0
-            #         print a
-            # for a in attributes:
-            #     if a == "Music":
-            #         for b in attributes["Music"]:
-            #             if b not in music:
-            #                 music[b] = 0
-            #                 print b
             na = "n/a"
             cnt = True
 
@@ -258,8 +253,6 @@ with open("../cleaned_data/featlist.txt", "wb") as r:
                     a_intimate = na
                 if 'classy' in attributes['Ambience']:
                     a_classy = attributes['Ambience']['classy']
-                    # if a_classy:
-                    #     count += 1
                     if 'a_classy' not in attr:
                         attr['a_classy'] = 1
                     else:
@@ -610,42 +603,4 @@ with open("../cleaned_data/featlist.txt", "wb") as r:
 
     for a in attr:
         print str(a) + ": " + str(attr[a])
-    # "attributes": 
-    # {"Take-out": true, 
-    #  "Drive-Thru": false, 
-    #  "Outdoor Seating": false, 
-    #  "Caters": false, 
-    #  "Noise Level": "average", 
-    #  "Parking": 
-    #     {"garage": false, 
-    #      "street": false, 
-    #      "validated": false, 
-    #      "lot": false, 
-    #      "valet": false}, 
-    #  "Delivery": false, 
-    #  "Price Range": 1, 
-    #  "Attire": "casual", 
-    #  "Has TV": false, 
-    #  "Good For": 
-    #     {"dessert": false, 
-    #      "latenight": false, 
-    #      "lunch": false, 
-    #      "dinner": false, 
-    #      "breakfast": false, 
-    #      "brunch": false}, 
-    #  "Takes Reservations": false, 
-    #  "Ambience": 
-    #     {"romantic": false, 
-    #      "intimate": false, 
-    #      "classy": false, 
-    #      "hipster": false, 
-    #      "divey": false, 
-    #      "touristy": false, 
-    #      "trendy": false, 
-    #      "upscale": false, 
-    #      "casual": false}, 
-    #  "Waiter Service": false, 
-    #  "Accepts Credit Cards": true, 
-    #  "Good for Kids": true, 
-    #  "Good For Groups": true, 
-    #  "Alcohol": "none"}
+
